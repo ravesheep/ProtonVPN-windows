@@ -174,7 +174,7 @@ namespace ProtonVPN.Common.Configuration.Source
                     BfeArticleUrl = "https://protonvpn.com/support/how-to-enable-the-base-filtering-engine",
                     PasswordResetUrl = "https://account.protonvpn.com/reset-password",
                     ForgetUsernameUrl = "https://account.protonvpn.com/forgot-username",
-                    UpdateUrl = "https://protonvpn.com/download/windows-releases.json",
+                    UpdateUrl = "https://raw.githubusercontent.com/ravesheep/ProtonVPN-windows/master/Updater/windows-releases.json",
                     DownloadUrl = "https://protonvpn.com/download",
                     ApiUrl = "https://vpn-api.proton.me",
                     TlsReportUrl = "https://reports.protonmail.ch/reports/tls",
@@ -299,13 +299,31 @@ namespace ProtonVPN.Common.Configuration.Source
                         },
                         new()
                         {
-                            Name = "[InternalReleaseHost]", // This is replaced by a CI script
-                            PublicKeyHashes = new HashSet<string>
-                            {
-                                "C4SMuz+h4+fTsxOKLXRKqrR9rAzk9bknu+hlC4QYmh0=",
-                            },
-                            Enforce = true,
-                            SendReport = true,
+                            Name = "download.protonvpn.net",
+                            PublicKeyHashes = new HashSet<string>(),
+                            Enforce = false,
+                            SendReport = false,
+                        },
+                        new()
+                        {
+                            Name = "github.com",
+                            PublicKeyHashes = new HashSet<string>(),
+                            Enforce = false,
+                            SendReport = false,
+                        },
+                        new()
+                        {
+                            Name = "raw.githubusercontent.com",
+                            PublicKeyHashes = new HashSet<string>(),
+                            Enforce = false,
+                            SendReport = false,
+                        },
+                        new()
+                        {
+                            Name = "[InternalReleaseHost]", //this is replaced by CI script
+                            PublicKeyHashes = new HashSet<string>(),
+                            Enforce = false,
+                            SendReport = false,
                         },
                         new()
                         {
