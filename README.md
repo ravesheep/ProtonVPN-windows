@@ -7,6 +7,30 @@ For a detailed build information see [BUILD](BUILD.md).
 For licensing information see [COPYING](COPYING.md).
 For contribution policy see [CONTRIBUTING](CONTRIBUTING.md).
 
+## About this fork
+
+This fork supports automatically updating the forwarded port setting in qBittorrent via its web interface, or in other apps via the command line or custom scripts.
+
+### qBittorrent
+
+If ProtonVPN's forwarded port number changes (e.g because of a connection to another server), it will notify qBittorrent of the change and update it.
+
+Its behavior can be tweaked directly in the settings and should match your qBittorrent settings (e.g: is authentication enabled via username/password?).
+
+### Other apps
+
+You can input a command to run whenever the port changes and use %protonPort% to get the current port.
+
+You can input another command to run whenever changing the app setting to another app (for example, to free the previous port number or close the app).
+
+### Updating
+
+Updating can be safely done from within the app, as it will download updates of this fork instead of the official version.
+
+Downloads are available on the [Github repository](https://github.com/ravesheep/ProtonVPN-windows/releases/latest).
+
+The rest of the original README can be found below.
+
 ## Description
 
 The [Proton VPN](https://protonvpn.com) Windows app is intended for every Proton VPN service user,
