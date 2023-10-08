@@ -27,8 +27,10 @@ using ProtonVPN.Api.Contracts.ReportAnIssue;
 using ProtonVPN.Common;
 using ProtonVPN.Common.KillSwitch;
 using ProtonVPN.Common.Networking;
+using ProtonVPN.Common.PortForwarding;
 using ProtonVPN.Core.Models;
 using ProtonVPN.Core.Native.Structures;
+using ProtonVPN.Core.PortForwarding;
 using ProtonVPN.Core.Profiles.Cached;
 using ProtonVPN.Core.Settings.Contracts;
 using ProtonVPN.Dns.Contracts;
@@ -84,6 +86,15 @@ namespace ProtonVPN.Core.Settings
         bool DoNotShowPortForwardingConfirmationDialog { get; set; }
         bool PortForwardingNotificationsEnabled { get; set; }
         bool PortForwardingInQuickSettings { get; set; }
+        bool PortForwardingAppInQuickSettings { get; set; }
+        PortForwardingApp PortForwardingApp { get; set; }
+        string PortForwardingCommand_On { get; set; }
+        string PortForwardingCommand_Off { get; set; }
+        TorrentAppMode TorrentAppMode { get; set; }
+        int TorrentAppWebUIPort { get; set; }
+        bool TorrentAppWebUIAuthRequired { get; set; }
+        string TorrentAppWebUIAuthUsername { get; set; }
+        string TorrentAppWebUIAuthPassword { get; set; }
         bool DoNotShowKillSwitchConfirmationDialog { get; set; }
         bool DoNotShowEnableSmartProtocolDialog { get; set; }
         bool DoNotShowDiscourageSecureCoreDialog { get; set; }

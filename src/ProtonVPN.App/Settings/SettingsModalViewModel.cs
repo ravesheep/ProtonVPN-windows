@@ -17,6 +17,7 @@
  * along with ProtonVPN.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -32,6 +33,7 @@ using ProtonVPN.Config.Url;
 using ProtonVPN.Core;
 using ProtonVPN.Core.Modals;
 using ProtonVPN.Core.Models;
+using ProtonVPN.Core.PortForwarding;
 using ProtonVPN.Core.Service.Vpn;
 using ProtonVPN.Core.Settings;
 using ProtonVPN.Core.Users;
@@ -91,6 +93,7 @@ namespace ProtonVPN.Settings
             _subscriptionManager = subscriptionManager;
             _languageProvider = languageProvider;
             _portForwardingManager = portForwardingManager;
+            _previousPortForwardingApp = _appSettings.PortForwardingApp;
             _reconnectState = reconnectState;
 
             _profileViewModelFactory = profileViewModelFactory;
@@ -356,6 +359,87 @@ namespace ProtonVPN.Settings
 
         public bool HasPortForwardingValue => ActivePortViewModel.HasPortForwardingValue;
 
+        public bool IsToShowPortForwardingAppSettings => IsToShowPortForwarding && _appSettings.PortForwardingEnabled;
+        public bool IsToShowPortForwardingAppInQuickSettings => IsToShowPortForwardingAppSettings && PortForwardingInQuickSettings;
+        public bool IsToShowPortForwardingCustomAppSettings => IsToShowPortForwardingAppSettings && SelectedPortForwardingApp == PortForwardingApp.Custom;
+        public bool IsToShowPortForwardingTorrentAppSettings => IsToShowPortForwardingAppSettings && SelectedPortForwardingApp == PortForwardingApp.qBittorrent;
+        public bool IsToShowPortForwardingTorrentAppWebUI => IsToShowPortForwardingTorrentAppSettings && SelectedTorrentAppMode == TorrentAppMode.WebUI;
+        public bool IsToShowPortForwardingTorrentAppWebUIAuth => IsToShowPortForwardingTorrentAppWebUI && _appSettings.TorrentAppWebUIAuthRequired;
+
+        public bool PortForwardingAppInQuickSettings
+        {
+            get => _appSettings.PortForwardingAppInQuickSettings;
+            set => _appSettings.PortForwardingAppInQuickSettings = value;
+        }
+
+        public List<KeyValuePair<PortForwardingApp, string>> PortForwardingApps => new()
+        {
+            new(PortForwardingApp.Disabled, Translation.Get("Settings_Advanced_lbl_PortForwarding_App_Disabled")),
+            new(PortForwardingApp.qBittorrent, Translation.Get("Settings_Advanced_lbl_PortForwarding_App_qBittorrent")),
+            new(PortForwardingApp.Custom, Translation.Get("Settings_Advanced_lbl_PortForwarding_App_Custom")),
+        };
+
+        public PortForwardingApp SelectedPortForwardingApp
+        {
+            get => _appSettings.PortForwardingApp;
+            set => _appSettings.PortForwardingApp = value;
+        }
+
+        private PortForwardingApp _previousPortForwardingApp;
+        public PortForwardingApp PreviousPortForwardingApp
+        {
+            get => _previousPortForwardingApp;
+            set => _previousPortForwardingApp = value;
+        }
+
+        public string PortForwardingApp_Command_On
+        {
+            get => _appSettings.PortForwardingCommand_On;
+            set => _appSettings.PortForwardingCommand_On = value;
+        }
+
+        public string PortForwardingApp_Command_Off
+        {
+            get => _appSettings.PortForwardingCommand_Off;
+            set => _appSettings.PortForwardingCommand_Off = value;
+        }
+
+        public List<KeyValuePair<TorrentAppMode, string>> TorrentAppModes => new()
+        {
+            new(TorrentAppMode.WebUI, Translation.Get("Settings_Advanced_lbl_PortForwarding_TorrentApp_WebUI")),
+            new(TorrentAppMode.CommandLine, Translation.Get("Settings_Advanced_lbl_PortForwarding_TorrentApp_CommandLine")),
+        };
+
+        public TorrentAppMode SelectedTorrentAppMode
+        {
+            get => _appSettings.TorrentAppMode;
+            set => _appSettings.TorrentAppMode = value;
+        }
+
+        public int TorrentAppWebUIPort
+        {
+            get => _appSettings.TorrentAppWebUIPort;
+            set => _appSettings.TorrentAppWebUIPort = value;
+        }
+
+        public bool TorrentAppWebUIAuthRequired
+        {
+            get => _appSettings.TorrentAppWebUIAuthRequired;
+            set => _appSettings.TorrentAppWebUIAuthRequired = value;
+        }
+
+        public string TorrentAppWebUIAuthUsername
+        {
+            get => _appSettings.TorrentAppWebUIAuthUsername;
+            set => _appSettings.TorrentAppWebUIAuthUsername = value;
+        }
+
+        public string TorrentAppWebUIAuthPassword
+        {
+            get => _appSettings.TorrentAppWebUIAuthPassword;
+            set => _appSettings.TorrentAppWebUIAuthPassword = value;
+        }
+
         public bool DoHEnabled
         {
             get => _appSettings.DoHEnabled;
@@ -587,6 +671,44 @@ namespace ProtonVPN.Settings
             {
                 NotifyOfPropertyChange(() => IsToShowPortForwardingWarningLabel);
                 NotifyOfPropertyChange(() => IsToShowPortForwardingSubSettings);
+                NotifyOfPropertyChange(() => IsToShowPortForwardingAppSettings);
+                NotifyOfPropertyChange(() => IsToShowPortForwardingAppInQuickSettings);
+                NotifyOfPropertyChange(() => IsToShowPortForwardingCustomAppSettings);
+                NotifyOfPropertyChange(() => IsToShowPortForwardingTorrentAppSettings);
+                NotifyOfPropertyChange(() => IsToShowPortForwardingTorrentAppWebUI);
+                NotifyOfPropertyChange(() => IsToShowPortForwardingTorrentAppWebUIAuth);
+            }
+            else if (e.PropertyName.Equals(nameof(PortForwardingInQuickSettings)))
+            {
+                NotifyOfPropertyChange(() => IsToShowPortForwardingAppInQuickSettings);
+            }
+            else if (e.PropertyName.Equals(nameof(IAppSettings.PortForwardingApp))) {
+                if (PreviousPortForwardingApp == PortForwardingApp.Custom && _appSettings.PortForwardingApp != PortForwardingApp.Custom)
+                {
+                    RunCustomCommand(PortForwardingApp_Command_Off, ActivePortViewModel.PortForwardingValue);
+                }
+
+                if (PortForwarding == true)
+                {
+                    _portForwardingManager.DisableAsync().Wait();
+                    _portForwardingManager.EnableAsync().Wait();
+                }
+
+                PreviousPortForwardingApp = _appSettings.PortForwardingApp;
+
+                NotifyOfPropertyChange(() => IsToShowPortForwardingCustomAppSettings);
+                NotifyOfPropertyChange(() => IsToShowPortForwardingTorrentAppSettings);
+                NotifyOfPropertyChange(() => IsToShowPortForwardingTorrentAppWebUI);
+                NotifyOfPropertyChange(() => IsToShowPortForwardingTorrentAppWebUIAuth);
+            }
+            else if (e.PropertyName.Equals(nameof(IAppSettings.TorrentAppMode)))
+            {
+                NotifyOfPropertyChange(() => IsToShowPortForwardingTorrentAppWebUI);
+                NotifyOfPropertyChange(() => IsToShowPortForwardingTorrentAppWebUIAuth);
+            }
+            else if (e.PropertyName.Equals(nameof(IAppSettings.TorrentAppWebUIAuthRequired)))
+            {
+                NotifyOfPropertyChange(() => IsToShowPortForwardingTorrentAppWebUIAuth);
             }
             else if (e.PropertyName.Equals(nameof(IAppSettings.SmartReconnectEnabled)))
             {
@@ -726,6 +848,27 @@ namespace ProtonVPN.Settings
         private void OnActivePortViewModelPropertyChanged(object sender, PropertyChangedEventArgs e)
         {
             NotifyOfPropertyChange(e.PropertyName);
+        }
+
+        private void RunCustomCommand(string command, string port)
+        {
+            string final = string.Format("SET protonPort={0}&", string.IsNullOrEmpty(port) ? "\"\"" : port);
+            final += command;
+
+            Console.WriteLine("final: " + final);
+
+            System.Diagnostics.ProcessStartInfo procStartInfo = new System.Diagnostics.ProcessStartInfo("cmd", "/v /c " + final)
+            {
+                UseShellExecute = false,
+                CreateNoWindow = true
+            };
+
+            System.Diagnostics.Process proc = new System.Diagnostics.Process
+            {
+                StartInfo = procStartInfo
+            };
+
+            proc.Start();
         }
     }
 }

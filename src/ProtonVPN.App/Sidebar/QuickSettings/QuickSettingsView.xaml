@@ -22,6 +22,7 @@ along with ProtonVPN.  If not, see <https://www.gnu.org/licenses/>.
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:wpf="clr-namespace:ProtonVPN.Core.Wpf"
              xmlns:translations="clr-namespace:ProtonVPN.Translations;assembly=ProtonVPN.Translations"
              xmlns:quickSettings="clr-namespace:ProtonVPN.Sidebar.QuickSettings"
              xmlns:onboarding="clr-namespace:ProtonVPN.Onboarding"
@@ -740,6 +741,17 @@ along with ProtonVPN.  If not, see <https://www.gnu.org/licenses/>.
                                                 <icons:ArrowsSwitch Style="{StaticResource Icon}" />
                                             </quickSettings:SettingButton.Icon>
                                         </quickSettings:SettingButton>
+                                        <StackPanel>
+                                            <wpf:Combobox HorizontalAlignment="Center"
+                                             Visibility="{Binding IsPortForwardingCustomAppVisible, Converter={StaticResource BoolToVis}}"
+                                              Style="{StaticResource ComboDropdown}"
+                                              ItemsSource="{Binding PortForwardingApps}"
+                                              SelectedValue="{Binding SelectedPortForwardingApp}"
+                                              SelectedValuePath="Key"
+                                              DisplayMemberPath="Value"
+                                              IsSynchronizedWithCurrentItem="True"
+                                              AutomationProperties.AutomationId="{StaticResource PortForwardingAppCombobox}"/>
+                                        </StackPanel>
                                         <StackPanel Orientation="Horizontal" 
                                                     Margin="0,10,0,0" 
                                                     Visibility="{Binding HasPortForwardingValue, Converter={StaticResource BoolToVis}}">

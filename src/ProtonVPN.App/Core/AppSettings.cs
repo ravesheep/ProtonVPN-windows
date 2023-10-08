@@ -39,6 +39,7 @@ using ProtonVPN.Core.Auth;
 using ProtonVPN.Core.Models;
 using ProtonVPN.Core.Native.Structures;
 using ProtonVPN.Core.OS.Crypto;
+using ProtonVPN.Core.PortForwarding;
 using ProtonVPN.Core.Profiles.Cached;
 using ProtonVPN.Core.Settings;
 using ProtonVPN.Core.Settings.Contracts;
@@ -414,6 +415,59 @@ namespace ProtonVPN.Core
         public bool PortForwardingInQuickSettings
         {
             get => Get<bool>();
+            set => Set(value);
+        }
+
+        public bool PortForwardingAppInQuickSettings
+        {
+            get => Get<bool>();
+            set => Set(value);
+        }
+
+        public PortForwardingApp PortForwardingApp
+        {
+            get => Get<PortForwardingApp>();
+            set => Set(value);
+        }
+
+        public string PortForwardingCommand_On
+        {
+            get => Get<string>();
+            set => Set(value);
+        }
+
+        public string PortForwardingCommand_Off
+        {
+            get => Get<string>();
+            set => Set(value);
+        }
+
+        public TorrentAppMode TorrentAppMode { 
+            get => Get<TorrentAppMode>();
+            set => Set(value);
+        }
+
+        public int TorrentAppWebUIPort
+        {
+            get => Get<int>();
+            set => Set(value);
+        }
+
+        public bool TorrentAppWebUIAuthRequired
+        {
+            get => Get<bool>();
+            set => Set(value);
+        }
+
+        public string TorrentAppWebUIAuthUsername
+        {
+            get => Get<string>();
+            set => Set(value);
+        }
+
+        public string TorrentAppWebUIAuthPassword
+        {
+            get => Get<string>();
             set => Set(value);
         }
 

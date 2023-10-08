@@ -552,6 +552,207 @@ along with ProtonVPN.  If not, see <https://www.gnu.org/licenses/>.
                             </Border>
                         </StackPanel>
 
+                        <Border DockPanel.Dock="Top" Style="{StaticResource BorderlessSettingContainer}" Padding="0,0,0,4"
+                                Visibility="{Binding IsToShowPortForwardingAppInQuickSettings, Converter={StaticResource BoolToVis}}">
+                            <DockPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Style="{StaticResource SubSettingIcon}" />
+                                    <Label Style="{StaticResource SettingName}" Margin="5,0,0,0"
+                                           Content="{translations:Loc Settings_Advanced_lbl_PortForwardingAppInQuickSettings}"/>
+                                    <icons:InfoCircleFilled Style="{StaticResource InfoCircle}"
+                                                            ToolTip="{translations:Loc Settings_Advanced_lbl_PortForwardingAppInQuickSettings_Info}"/>
+                                </StackPanel>
+
+                                <CheckBox Style="{StaticResource ToggleSwitch}"
+                                          Margin="0,0,0,0"
+                                          HorizontalAlignment="Right"
+                                          IsChecked="{Binding PortForwardingAppInQuickSettings}"
+                                          AutomationProperties.AutomationId="{StaticResource PortForwardingInQuickSettingsCheckbox}"/>
+                            </DockPanel>
+                        </Border>
+
+                        <Border DockPanel.Dock="Top" Style="{StaticResource BorderlessSettingContainer}" Padding="0,0,0,4"
+                                Visibility="{Binding IsToShowPortForwardingAppSettings, Converter={StaticResource BoolToVis}}">
+                            <DockPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Style="{StaticResource SubSettingIcon}" />
+                                    <Label Style="{StaticResource SettingName}" Margin="5,0,0,0"
+                                           Content="{translations:Loc Settings_Advanced_lbl_PortForwarding_App}"/>
+                                    <icons:InfoCircleFilled Style="{StaticResource InfoCircle}"
+                                                            ToolTip="{translations:Loc Settings_Advanced_lbl_PortForwarding_App_Info}"/>
+                                </StackPanel>
+
+                                <wpf:Combobox HorizontalAlignment="Right"
+                                              Style="{StaticResource ComboDropdown}"
+                                              ItemsSource="{Binding PortForwardingApps}"
+                                              SelectedValue="{Binding SelectedPortForwardingApp}"
+                                              SelectedValuePath="Key"
+                                              DisplayMemberPath="Value"
+                                              IsSynchronizedWithCurrentItem="True"
+                                              AutomationProperties.AutomationId="{StaticResource PortForwardingAppCombobox}"/>
+                            </DockPanel>
+                        </Border>
+
+                        <Border DockPanel.Dock="Top" Style="{StaticResource BorderlessSettingContainer}" Padding="0,0,0,4"
+                                Visibility="{Binding IsToShowPortForwardingCustomAppSettings, Converter={StaticResource BoolToVis}}">
+                            <DockPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Style="{StaticResource SubSettingIcon}" />
+                                    <Label Style="{StaticResource SettingName}" Margin="5,0,0,0"
+                                           Content="{translations:Loc Settings_Advanced_lbl_PortForwarding_CustomApp_CommandOn}"/>
+                                    <icons:InfoCircleFilled Style="{StaticResource InfoCircle}"
+                                                            ToolTip="{translations:Loc Settings_Advanced_lbl_PortForwarding_CustomApp_CommandOn_Info}"/>
+                                </StackPanel>
+
+                                <TextBox HorizontalAlignment="Right"
+                                          TextWrapping="Wrap"
+                                          TextAlignment="Left"
+                                          Style="{StaticResource SettingsPlaceholderTextBox}"
+                                          Tag="{translations:Loc Settings_Advanced_lbl_PortForwarding_CustomApp_CommandOn_msg_Watermark}"
+                                          Text="{Binding PortForwardingApp_Command_On, UpdateSourceTrigger=PropertyChanged}"
+                                          MaxLength="10000"
+                                          Width="220"
+                                          AutomationProperties.AutomationId="{StaticResource PortForwardingCustomAppCommandOnTextbox}"/>
+                            </DockPanel>
+                        </Border>
+
+                        <Border DockPanel.Dock="Top" Style="{StaticResource BorderlessSettingContainer}" Padding="0,0,0,4"
+                                Visibility="{Binding IsToShowPortForwardingCustomAppSettings, Converter={StaticResource BoolToVis}}">
+                            <DockPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Style="{StaticResource SubSettingIcon}" />
+                                    <Label Style="{StaticResource SettingName}" Margin="5,0,0,0"
+                                           Content="{translations:Loc Settings_Advanced_lbl_PortForwarding_CustomApp_CommandOff}"/>
+                                    <icons:InfoCircleFilled Style="{StaticResource InfoCircle}"
+                                                            ToolTip="{translations:Loc Settings_Advanced_lbl_PortForwarding_CustomApp_CommandOff_Info}"/>
+                                </StackPanel>
+
+                                <TextBox HorizontalAlignment="Right"
+                                          TextWrapping="Wrap"
+                                          TextAlignment="Left"
+                                          Style="{StaticResource SettingsPlaceholderTextBox}"
+                                          Tag="{translations:Loc Settings_Advanced_lbl_PortForwarding_CustomApp_CommandOff_msg_Watermark}"
+                                          Text="{Binding PortForwardingApp_Command_Off, UpdateSourceTrigger=PropertyChanged}"
+                                          MaxLength="10000"
+                                          Width="220"
+                                          AutomationProperties.AutomationId="{StaticResource PortForwardingCustomAppCommandOffTextbox}"/>
+                            </DockPanel>
+                        </Border>
+
+                        <Border DockPanel.Dock="Top" Style="{StaticResource BorderlessSettingContainer}" Padding="0,0,0,4"
+                                Visibility="{Binding IsToShowPortForwardingTorrentAppSettings, Converter={StaticResource BoolToVis}}">
+                            <DockPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Style="{StaticResource SubSettingIcon}" />
+                                    <Label Style="{StaticResource SettingName}" Margin="5,0,0,0"
+                                           Content="{translations:Loc Settings_Advanced_lbl_PortForwarding_TorrentApp}"/>
+                                    <icons:InfoCircleFilled Style="{StaticResource InfoCircle}"
+                                                            ToolTip="{translations:Loc Settings_Advanced_lbl_PortForwarding_TorrentApp_Info}"/>
+                                </StackPanel>
+
+                                <wpf:Combobox HorizontalAlignment="Right"
+                                              Style="{StaticResource ComboDropdown}"
+                                              ItemsSource="{Binding TorrentAppModes}"
+                                              SelectedValue="{Binding SelectedTorrentAppMode}"
+                                              SelectedValuePath="Key"
+                                              DisplayMemberPath="Value"
+                                              IsSynchronizedWithCurrentItem="True"
+                                              AutomationProperties.AutomationId="{StaticResource PortForwardingTorrentAppModeCheckbox}"/>
+                            </DockPanel>
+                        </Border>
+
+                        <Border DockPanel.Dock="Top" Style="{StaticResource BorderlessSettingContainer}" Padding="0,0,0,4"
+                                Visibility="{Binding IsToShowPortForwardingTorrentAppWebUI, Converter={StaticResource BoolToVis}}">
+                            <DockPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Style="{StaticResource SubSettingIcon}" />
+                                    <Label Style="{StaticResource SettingName}" Margin="5,0,0,0"
+                                           Content="{translations:Loc Settings_Advanced_lbl_PortForwarding_TorrentApp_WebUI_Port}"/>
+                                    <icons:InfoCircleFilled Style="{StaticResource InfoCircle}"
+                                                            ToolTip="{translations:Loc Settings_Advanced_lbl_PortForwarding_TorrentApp_WebUI_Port_Info}"/>
+                                </StackPanel>
+
+                                <TextBox HorizontalAlignment="Right"
+                                          TextWrapping="Wrap"
+                                          TextAlignment="Center"
+                                          Style="{StaticResource SettingsPlaceholderTextBox}"
+                                          Tag="{translations:Loc Settings_Advanced_lbl_Portforwarding_TorrentApp_WebUI_Port_msg_Watermark}"
+                                          Text="{Binding TorrentAppWebUIPort, UpdateSourceTrigger=PropertyChanged}"
+                                          MaxLength="6"
+                                          Width="60"
+                                          AutomationProperties.AutomationId="{StaticResource PortForwardingTorrentAppWebUIPortTextbox}"/>
+                            </DockPanel>
+                        </Border>
+
+                        <Border DockPanel.Dock="Top" Style="{StaticResource BorderlessSettingContainer}" Padding="0,0,0,4"
+                                Visibility="{Binding IsToShowPortForwardingTorrentAppWebUI, Converter={StaticResource BoolToVis}}">
+                            <DockPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Style="{StaticResource SubSettingIcon}" />
+                                    <Label Style="{StaticResource SettingName}" Margin="5,0,0,0"
+                                           Content="{translations:Loc Settings_Advanced_lbl_PortForwarding_TorrentApp_WebUI_AuthRequired}"/>
+                                    <icons:InfoCircleFilled Style="{StaticResource InfoCircle}"
+                                                            ToolTip="{translations:Loc Settings_Advanced_lbl_PortForwarding_TorrentApp_WebUI_AuthRequired_Info}"/>
+                                </StackPanel>
+
+                                <CheckBox Style="{StaticResource ToggleSwitch}"
+                                          Margin="0,0,0,0"
+                                          HorizontalAlignment="Right"
+                                          IsChecked="{Binding TorrentAppWebUIAuthRequired}"
+                                          AutomationProperties.AutomationId="{StaticResource PortForwardingTorrentAppWebUIAuthRequiredCheckbox}"/>
+                            </DockPanel>
+                        </Border>
+
+                        <Border DockPanel.Dock="Top" Style="{StaticResource BorderlessSettingContainer}" Padding="0,0,0,4"
+                                Visibility="{Binding IsToShowPortForwardingTorrentAppWebUIAuth, Converter={StaticResource BoolToVis}}">
+                            <DockPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Style="{StaticResource SubSettingIcon}" />
+                                    <Label Style="{StaticResource SettingName}" Margin="5,0,0,0"
+                                           Content="{translations:Loc Settings_Advanced_lbl_PortForwarding_TorrentApp_WebUI_Auth_Username}"/>
+                                    <icons:InfoCircleFilled Style="{StaticResource InfoCircle}"
+                                                            ToolTip="{translations:Loc Settings_Advanced_lbl_PortForwarding_TorrentApp_WebUI_Auth_Username_Info}"/>
+                                </StackPanel>
+
+                                <TextBox HorizontalAlignment="Right"
+                                          TextWrapping="Wrap"
+                                          TextAlignment="Center"
+                                          Style="{StaticResource SettingsPlaceholderTextBox}"
+                                          Tag="{translations:Loc Settings_Advanced_lbl_Portforwarding_TorrentApp_WebUI_Auth_Username_msg_Watermark}"
+                                          Text="{Binding TorrentAppWebUIAuthUsername, UpdateSourceTrigger=PropertyChanged}"
+                                          MaxLength="200"
+                                          Width="160"
+                                          AutomationProperties.AutomationId="{StaticResource PortForwardingTorrentAppWebUIAuthUsernameTextbox}"/>
+                            </DockPanel>
+                        </Border>
+
+                        <Border DockPanel.Dock="Top" Style="{StaticResource BorderlessSettingContainer}" Padding="0,0,0,4"
+                                Visibility="{Binding IsToShowPortForwardingTorrentAppWebUIAuth, Converter={StaticResource BoolToVis}}">
+                            <DockPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Style="{StaticResource SubSettingIcon}" />
+                                    <Label Style="{StaticResource SettingName}" Margin="5,0,0,0"
+                                           Content="{translations:Loc Settings_Advanced_lbl_PortForwarding_TorrentApp_WebUI_Auth_Password}"/>
+                                    <icons:InfoCircleFilled Style="{StaticResource InfoCircle}"
+                                                            ToolTip="{translations:Loc Settings_Advanced_lbl_PortForwarding_TorrentApp_WebUI_Auth_Password_Info}"/>
+                                </StackPanel>
+
+                                <PasswordBox HorizontalAlignment="Right"
+                                          VerticalContentAlignment="Center"
+                                          HorizontalContentAlignment="Center"
+                                          Style="{StaticResource PasswordBoxStyle}"
+                                          Background="{StaticResource BackgroundWeakBrushColor}"
+                                          Foreground="{StaticResource TextNormBrushColor}"
+                                          CaretBrush="{StaticResource TextNormBrushColor}"
+                                          BorderBrush="{StaticResource BorderWeakBrushColor}"
+                                          BorderThickness="0, 0, 0, 1"
+                                          PasswordChanged="PasswordBox_PasswordChanged"
+                                          MaxLength="200"
+                                          Width="160"
+                                          AutomationProperties.AutomationId="{StaticResource PortForwardingTorrentAppWebUIAuthPasswordTextbox}"/>
+                            </DockPanel>
+                        </Border>
+
                         <Border DockPanel.Dock="Top" Style="{StaticResource BorderlessSettingContainer}"
                                 Visibility="{Binding IsToShowNetworkDriverSelection, Converter={StaticResource BoolToVis}}">
                             <DockPanel>

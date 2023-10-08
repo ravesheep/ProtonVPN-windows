@@ -17,6 +17,8 @@
  * along with ProtonVPN.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+using System.Windows.Controls;
+
 namespace ProtonVPN.Settings
 {
     public partial class SettingsModalView
@@ -24,6 +26,14 @@ namespace ProtonVPN.Settings
         public SettingsModalView()
         {
             InitializeComponent();
+        }
+
+        private void PasswordBox_PasswordChanged(object sender, System.Windows.RoutedEventArgs e)
+        {
+            if (DataContext != null)
+            { 
+                ((dynamic)DataContext).TorrentAppWebUIAuthPassword = ((PasswordBox)sender).Password;
+            }
         }
     }
 }

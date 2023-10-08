@@ -3146,6 +3146,90 @@ Please follow &lt;Hyperlink Command="{Binding OpenArticleCommand}"&gt;&lt;Run Te
   <data name="PortForwarding_lbl_CopyValue" xml:space="preserve">
     <value>Click to copy this port number.</value>
   </data>
+  <data name="Settings_Advanced_lbl_PortForwardingAppInQuickSettings" xml:space="preserve">
+    <value>Switch between apps shortcut</value>
+  </data>
+  <data name="Settings_Advanced_lbl_PortForwardingAppInQuickSettings_Info" xml:space="preserve">
+    <value>Change the selected application for Port Forwarding in the Quick Settings.</value>
+  </data>
+  <data name="Settings_Advanced_lbl_PortForwarding_App" xml:space="preserve">
+    <value>Update port for app</value>
+  </data>
+  <data name="Settings_Advanced_lbl_PortForwarding_App_Info" xml:space="preserve">
+    <value>Automatically update the port used by the selected app for incoming connections.</value>
+  </data>
+  <data name="Settings_Advanced_lbl_PortForwarding_CustomApp_CommandOn" xml:space="preserve">
+    <value>Command to run</value>
+  </data>
+  <data name="Settings_Advanced_lbl_PortForwarding_CustomApp_CommandOn_Info" xml:space="preserve">
+    <value>The command to run when the active port changes. Use %protonPort% in a batch file or !protonPort! inline to get the current active port.</value>
+  </data>
+  <data name="Settings_Advanced_lbl_PortForwarding_CustomApp_CommandOn_msg_Watermark" xml:space="preserve">
+    <value>Command</value>
+  </data>
+  <data name="Settings_Advanced_lbl_PortForwarding_CustomApp_CommandOff" xml:space="preserve">
+    <value>Command on app changed</value>
+  </data>
+  <data name="Settings_Advanced_lbl_PortForwarding_CustomApp_CommandOff_Info" xml:space="preserve">
+    <value>The command to run when the setting is changed from "Custom" to another app. Use %protonPort% or !protonPort! to get the value of the previous active port, if Port Forwarding is still enabled and the VPN is still connected.</value>
+  </data>
+  <data name="Settings_Advanced_lbl_PortForwarding_CustomApp_CommandOff_msg_Watermark" xml:space="preserve">
+    <value>Command</value>
+  </data>
+  <data name="Settings_Advanced_lbl_PortForwarding_App_Disabled" xml:space="preserve">
+    <value>Disabled</value>
+  </data>
+  <data name="Settings_Advanced_lbl_PortForwarding_App_qBittorrent" xml:space="preserve">
+    <value>qBittorrent</value>
+  </data>
+  <data name="Settings_Advanced_lbl_PortForwarding_App_Custom" xml:space="preserve">
+    <value>Custom</value>
+  </data>
+  <data name="Settings_Advanced_lbl_PortForwarding_TorrentApp" xml:space="preserve">
+    <value>Port updating method</value>
+  </data>
+  <data name="Settings_Advanced_lbl_PortForwarding_TorrentApp_Info" xml:space="preserve">
+    <value>How the port used by qBittorrent should be modified.</value>
+  </data>
+  <data name="Settings_Advanced_lbl_PortForwarding_TorrentApp_WebUI" xml:space="preserve">
+    <value>via Web UI</value>
+  </data>
+  <data name="Settings_Advanced_lbl_PortForwarding_TorrentApp_CommandLine" xml:space="preserve">
+    <value>via Command Line</value>
+  </data>
+  <data name="Settings_Advanced_lbl_PortForwarding_TorrentApp_WebUI_Port" xml:space="preserve">
+    <value>Web UI port</value>
+  </data>
+  <data name="Settings_Advanced_lbl_PortForwarding_TorrentApp_WebUI_Port_Info" xml:space="preserve">
+    <value>The port which qBittorrent is listening to, typically defaults to 8080.</value>
+  </data>
+  <data name="Settings_Advanced_lbl_Portforwarding_TorrentApp_WebUI_Port_msg_Watermark" xml:space="preserve">
+    <value>Port</value>
+  </data>
+  <data name="Settings_Advanced_lbl_PortForwarding_TorrentApp_WebUI_AuthRequired" xml:space="preserve">
+    <value>Requires authentication</value>
+  </data>
+  <data name="Settings_Advanced_lbl_PortForwarding_TorrentApp_WebUI_AuthRequired_Info" xml:space="preserve">
+    <value>Is a login required to use qBittorrent's Web UI? Authentication can often be disabled locally.</value>
+  </data>
+  <data name="Settings_Advanced_lbl_PortForwarding_TorrentApp_WebUI_Auth_Username" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="Settings_Advanced_lbl_PortForwarding_TorrentApp_WebUI_Auth_Username_Info" xml:space="preserve">
+    <value>The username required by qBittorrent.</value>
+  </data>
+  <data name="Settings_Advanced_lbl_Portforwarding_TorrentApp_WebUI_Auth_Username_msg_Watermark" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="Settings_Advanced_lbl_PortForwarding_TorrentApp_WebUI_Auth_Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="Settings_Advanced_lbl_PortForwarding_TorrentApp_WebUI_Auth_Password_Info" xml:space="preserve">
+    <value>The password required by qBittorrent.</value>
+  </data>
+  <data name="Settings_Advanced_lbl_Portforwarding_TorrentApp_WebUI_Auth_Password_msg_Watermark" xml:space="preserve">
+    <value>Password</value>
+  </data>
   <data name="Modal_DiscourageSecureCore_ActivateSecureCore" xml:space="preserve">
     <value>Activate Secure Core</value>
   </data>

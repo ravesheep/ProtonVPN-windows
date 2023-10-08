@@ -17,6 +17,7 @@
  * along with ProtonVPN.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -27,6 +28,7 @@ using ProtonVPN.Common.NetShield;
 using ProtonVPN.Common.Vpn;
 using ProtonVPN.Config.Url;
 using ProtonVPN.Core.Modals;
+using ProtonVPN.Core.PortForwarding;
 using ProtonVPN.Core.NetShield;
 using ProtonVPN.Core.Service.Vpn;
 using ProtonVPN.Core.Settings;
@@ -116,6 +118,21 @@ namespace ProtonVPN.Sidebar.QuickSettings
         public bool IsPortForwardingVisible => _appSettings.PortForwardingInQuickSettings &&
                                                _appSettings.FeaturePortForwardingEnabled &&
                                                (_userStorage.GetUser().Paid() || !_appSettings.FeatureFreeRescopeEnabled);
+
+        public bool IsPortForwardingCustomAppVisible => IsPortForwardingVisible && _appSettings.PortForwardingAppInQuickSettings;
+
+        public List<KeyValuePair<PortForwardingApp, string>> PortForwardingApps => new()
+        {
+            new(PortForwardingApp.Disabled, Translation.Get("Settings_Advanced_lbl_PortForwarding_App_Disabled")),
+            new(PortForwardingApp.qBittorrent, Translation.Get("Settings_Advanced_lbl_PortForwarding_App_qBittorrent")),
+            new(PortForwardingApp.Custom, Translation.Get("Settings_Advanced_lbl_PortForwarding_App_Custom")),
+        };
+
+        public PortForwardingApp SelectedPortForwardingApp
+        {
+            get => _appSettings.PortForwardingApp;
+            set => _appSettings.PortForwardingApp = value;
+        }
 
         public int KillSwitchButtonNumber => _appSettings.FeatureNetShieldEnabled ? 2 : 1;
         public int PortForwardingButtonNumber => KillSwitchButtonNumber + 1;
@@ -342,12 +359,19 @@ namespace ProtonVPN.Sidebar.QuickSettings
                 case nameof(IAppSettings.FeaturePortForwardingEnabled):
                 case nameof(IAppSettings.PortForwardingInQuickSettings):
                     NotifyOfPropertyChange(nameof(IsPortForwardingVisible));
+                    NotifyOfPropertyChange(nameof(IsPortForwardingCustomAppVisible));
                     NotifyOfPropertyChange(nameof(TotalButtons));
                     break;
                 case nameof(IAppSettings.PortForwardingEnabled):
                     NotifyOfPropertyChange(nameof(IsPortForwardingOnButtonOn));
                     NotifyOfPropertyChange(nameof(IsPortForwardingOffButtonOn));
                     NotifyOfPropertyChange(nameof(ShowPortForwardingWarningLabel));
+                    break;
+                case nameof(IAppSettings.PortForwardingAppInQuickSettings):
+                    NotifyOfPropertyChange(nameof(IsPortForwardingCustomAppVisible));
+                    break;
+                case nameof(IAppSettings.PortForwardingApp):
+                    NotifyOfPropertyChange(nameof(SelectedPortForwardingApp));
                     break;
                 case nameof(IAppSettings.FeatureNetShieldStatsEnabled):
                     NotifyOfPropertyChange(nameof(HasNetShieldStats));

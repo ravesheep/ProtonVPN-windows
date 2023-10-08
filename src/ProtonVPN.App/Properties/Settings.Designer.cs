@@ -1568,6 +1568,114 @@ namespace ProtonVPN.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string PortForwardingApp {
+            get {
+                return ((string)(this["PortForwardingApp"]));
+            }
+            set {
+                this["PortForwardingApp"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool PortForwardingAppInQuickSettings {
+            get {
+                return ((bool)(this["PortForwardingAppInQuickSettings"]));
+            }
+            set {
+                this["PortForwardingAppInQuickSettings"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string PortForwardingCommand_On {
+            get {
+                return ((string)(this["PortForwardingCommand_On"]));
+            }
+            set {
+                this["PortForwardingCommand_On"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string PortForwardingCommand_Off {
+            get {
+                return ((string)(this["PortForwardingCommand_Off"]));
+            }
+            set {
+                this["PortForwardingCommand_Off"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string TorrentAppMode {
+            get {
+                return ((string)(this["TorrentAppMode"]));
+            }
+            set {
+                this["TorrentAppMode"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("8080")]
+        public int TorrentAppWebUIPort {
+            get {
+                return ((int)(this["TorrentAppWebUIPort"]));
+            }
+            set {
+                this["TorrentAppWebUIPort"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool TorrentAppWebUIAuthRequired {
+            get {
+                return ((bool)(this["TorrentAppWebUIAuthRequired"]));
+            }
+            set {
+                this["TorrentAppWebUIAuthRequired"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string TorrentAppWebUIAuthUsername {
+            get {
+                return ((string)(this["TorrentAppWebUIAuthUsername"]));
+            }
+            set {
+                this["TorrentAppWebUIAuthUsername"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string TorrentAppWebUIAuthPassword {
+            get {
+                return ((string)(this["TorrentAppWebUIAuthPassword"]));
+            }
+            set {
+                this["TorrentAppWebUIAuthPassword"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool IsToAutoUpdate {
             get {

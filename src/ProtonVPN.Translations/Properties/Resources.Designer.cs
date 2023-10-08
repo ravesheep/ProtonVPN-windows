@@ -5908,11 +5908,265 @@ namespace ProtonVPN.Translations.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Update port for app.
+        /// </summary>
+        public static string Settings_Advanced_lbl_PortForwarding_App {
+            get {
+                return ResourceManager.GetString("Settings_Advanced_lbl_PortForwarding_App", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Custom.
+        /// </summary>
+        public static string Settings_Advanced_lbl_PortForwarding_App_Custom {
+            get {
+                return ResourceManager.GetString("Settings_Advanced_lbl_PortForwarding_App_Custom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Disabled.
+        /// </summary>
+        public static string Settings_Advanced_lbl_PortForwarding_App_Disabled {
+            get {
+                return ResourceManager.GetString("Settings_Advanced_lbl_PortForwarding_App_Disabled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Automatically update the port used by the selected app for incoming connections..
+        /// </summary>
+        public static string Settings_Advanced_lbl_PortForwarding_App_Info {
+            get {
+                return ResourceManager.GetString("Settings_Advanced_lbl_PortForwarding_App_Info", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to qBittorrent.
+        /// </summary>
+        public static string Settings_Advanced_lbl_PortForwarding_App_qBittorrent {
+            get {
+                return ResourceManager.GetString("Settings_Advanced_lbl_PortForwarding_App_qBittorrent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Command on app changed.
+        /// </summary>
+        public static string Settings_Advanced_lbl_PortForwarding_CustomApp_CommandOff {
+            get {
+                return ResourceManager.GetString("Settings_Advanced_lbl_PortForwarding_CustomApp_CommandOff", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The command to run when the setting is changed from &quot;Custom&quot; to another app. Use %protonPort% or !protonPort! to get the value of the previous active port, if Port Forwarding is still enabled and the VPN is still connected..
+        /// </summary>
+        public static string Settings_Advanced_lbl_PortForwarding_CustomApp_CommandOff_Info {
+            get {
+                return ResourceManager.GetString("Settings_Advanced_lbl_PortForwarding_CustomApp_CommandOff_Info", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Command.
+        /// </summary>
+        public static string Settings_Advanced_lbl_PortForwarding_CustomApp_CommandOff_msg_Watermark {
+            get {
+                return ResourceManager.GetString("Settings_Advanced_lbl_PortForwarding_CustomApp_CommandOff_msg_Watermark", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Command to run.
+        /// </summary>
+        public static string Settings_Advanced_lbl_PortForwarding_CustomApp_CommandOn {
+            get {
+                return ResourceManager.GetString("Settings_Advanced_lbl_PortForwarding_CustomApp_CommandOn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The command to run when the active port changes. Use %protonPort% in a batch file or !protonPort! inline to get the current active port..
+        /// </summary>
+        public static string Settings_Advanced_lbl_PortForwarding_CustomApp_CommandOn_Info {
+            get {
+                return ResourceManager.GetString("Settings_Advanced_lbl_PortForwarding_CustomApp_CommandOn_Info", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Command.
+        /// </summary>
+        public static string Settings_Advanced_lbl_PortForwarding_CustomApp_CommandOn_msg_Watermark {
+            get {
+                return ResourceManager.GetString("Settings_Advanced_lbl_PortForwarding_CustomApp_CommandOn_msg_Watermark", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Speed up your torrenting and online gaming by allowing supported local apps to be reachable from the internet. &lt;Hyperlink Command=&quot;{Binding LearnMoreAboutPortForwardingCommand}&quot;&gt;Learn more&lt;/Hyperlink&gt;.
         /// </summary>
         public static string Settings_Advanced_lbl_PortForwarding_Info {
             get {
                 return ResourceManager.GetString("Settings_Advanced_lbl_PortForwarding_Info", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Port updating method.
+        /// </summary>
+        public static string Settings_Advanced_lbl_PortForwarding_TorrentApp {
+            get {
+                return ResourceManager.GetString("Settings_Advanced_lbl_PortForwarding_TorrentApp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to via Command Line.
+        /// </summary>
+        public static string Settings_Advanced_lbl_PortForwarding_TorrentApp_CommandLine {
+            get {
+                return ResourceManager.GetString("Settings_Advanced_lbl_PortForwarding_TorrentApp_CommandLine", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to How the port used by qBittorrent should be modified..
+        /// </summary>
+        public static string Settings_Advanced_lbl_PortForwarding_TorrentApp_Info {
+            get {
+                return ResourceManager.GetString("Settings_Advanced_lbl_PortForwarding_TorrentApp_Info", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to via Web UI.
+        /// </summary>
+        public static string Settings_Advanced_lbl_PortForwarding_TorrentApp_WebUI {
+            get {
+                return ResourceManager.GetString("Settings_Advanced_lbl_PortForwarding_TorrentApp_WebUI", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Password.
+        /// </summary>
+        public static string Settings_Advanced_lbl_PortForwarding_TorrentApp_WebUI_Auth_Password {
+            get {
+                return ResourceManager.GetString("Settings_Advanced_lbl_PortForwarding_TorrentApp_WebUI_Auth_Password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The password required by qBittorrent..
+        /// </summary>
+        public static string Settings_Advanced_lbl_PortForwarding_TorrentApp_WebUI_Auth_Password_Info {
+            get {
+                return ResourceManager.GetString("Settings_Advanced_lbl_PortForwarding_TorrentApp_WebUI_Auth_Password_Info", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Password.
+        /// </summary>
+        public static string Settings_Advanced_lbl_Portforwarding_TorrentApp_WebUI_Auth_Password_msg_Watermark {
+            get {
+                return ResourceManager.GetString("Settings_Advanced_lbl_Portforwarding_TorrentApp_WebUI_Auth_Password_msg_Watermark" +
+                        "", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Username.
+        /// </summary>
+        public static string Settings_Advanced_lbl_PortForwarding_TorrentApp_WebUI_Auth_Username {
+            get {
+                return ResourceManager.GetString("Settings_Advanced_lbl_PortForwarding_TorrentApp_WebUI_Auth_Username", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The username required by qBittorrent..
+        /// </summary>
+        public static string Settings_Advanced_lbl_PortForwarding_TorrentApp_WebUI_Auth_Username_Info {
+            get {
+                return ResourceManager.GetString("Settings_Advanced_lbl_PortForwarding_TorrentApp_WebUI_Auth_Username_Info", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Username.
+        /// </summary>
+        public static string Settings_Advanced_lbl_Portforwarding_TorrentApp_WebUI_Auth_Username_msg_Watermark {
+            get {
+                return ResourceManager.GetString("Settings_Advanced_lbl_Portforwarding_TorrentApp_WebUI_Auth_Username_msg_Watermark" +
+                        "", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Requires authentication.
+        /// </summary>
+        public static string Settings_Advanced_lbl_PortForwarding_TorrentApp_WebUI_AuthRequired {
+            get {
+                return ResourceManager.GetString("Settings_Advanced_lbl_PortForwarding_TorrentApp_WebUI_AuthRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Is a login required to use qBittorrent&apos;s Web UI? Authentication can often be disabled locally..
+        /// </summary>
+        public static string Settings_Advanced_lbl_PortForwarding_TorrentApp_WebUI_AuthRequired_Info {
+            get {
+                return ResourceManager.GetString("Settings_Advanced_lbl_PortForwarding_TorrentApp_WebUI_AuthRequired_Info", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Web UI port.
+        /// </summary>
+        public static string Settings_Advanced_lbl_PortForwarding_TorrentApp_WebUI_Port {
+            get {
+                return ResourceManager.GetString("Settings_Advanced_lbl_PortForwarding_TorrentApp_WebUI_Port", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The port which qBittorrent is listening to, typically defaults to 8080..
+        /// </summary>
+        public static string Settings_Advanced_lbl_PortForwarding_TorrentApp_WebUI_Port_Info {
+            get {
+                return ResourceManager.GetString("Settings_Advanced_lbl_PortForwarding_TorrentApp_WebUI_Port_Info", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Port.
+        /// </summary>
+        public static string Settings_Advanced_lbl_Portforwarding_TorrentApp_WebUI_Port_msg_Watermark {
+            get {
+                return ResourceManager.GetString("Settings_Advanced_lbl_Portforwarding_TorrentApp_WebUI_Port_msg_Watermark", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Switch between apps shortcut.
+        /// </summary>
+        public static string Settings_Advanced_lbl_PortForwardingAppInQuickSettings {
+            get {
+                return ResourceManager.GetString("Settings_Advanced_lbl_PortForwardingAppInQuickSettings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Change the selected application for Port Forwarding in the Quick Settings..
+        /// </summary>
+        public static string Settings_Advanced_lbl_PortForwardingAppInQuickSettings_Info {
+            get {
+                return ResourceManager.GetString("Settings_Advanced_lbl_PortForwardingAppInQuickSettings_Info", resourceCulture);
             }
         }
         
