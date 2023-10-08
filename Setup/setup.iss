@@ -1,4 +1,4 @@
-#define MyAppVersion "3.0.0"
+﻿#define MyAppVersion "3.0.0"
 #define MyAppName "Proton VPN" 
 #define MyAppExeName "ProtonVPN.exe"
 #define LauncherExeName "ProtonVPN.Launcher.exe"
@@ -16,7 +16,7 @@
 
 #define Hash ""
 #define VersionFolder "v" + MyAppVersion
-#define SourcePath GetEnv("BUILD_PATH")
+#define SourcePath "src/bin/win-x64/publish"
 #define IsBTISource SourcePath == "src/bin/win-x64/BTI/publish"
 #if IsBTISource
 #define OutputBaseSuffix "_BTI"
@@ -48,8 +48,8 @@ DisableFinishedPage=yes
 DisableStartupPrompt=yes
 VersionInfoProductTextVersion={#MyAppVersion}-{#hash}
 VersionInfoVersion={#MyAppVersion}
-AppCopyright=� 2022 {#MyPublisher}
-SignTool=signtool sign /a /tr http://timestamp.globalsign.com/tsa/r6advanced1 /td SHA256 /fd SHA256 $f
+AppCopyright=© 2022 {#MyPublisher}
+;SignTool=signtool sign /a /tr http://timestamp.globalsign.com/tsa/r6advanced1 /td SHA256 /fd SHA256 $f
 
 [Messages]
 SetupWindowTitle={#MyAppName}
