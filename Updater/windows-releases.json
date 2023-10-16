@@ -8,6 +8,22 @@
             "Name": "Stable",
             "Releases": [
                 {
+                    "Version": "3.2.2",
+                    "File": {
+                        "Url": "https://github.com/ravesheep/ProtonVPN-windows/releases/download/3.2.2/ProtonVPN_v3.2.2.exe",
+                        "SHA1CheckSum": "44eb918279f95431bbadd4dcec95087905bd9024",
+                        "SHA256CheckSum": "76b9b8896548a485df8a5fa32766cc60eee13dad1e06ee96d0327cf5a8ae6c13",
+                        "SHA512CheckSum": "d0b1595bd0252c5efac50ca17a0a1e5c16f04dff377b3ff876aaad5c19d697df84788b99915576dbc59e7297281c020a513c0521d8be1009d754151bb61b11a7",
+                        "Arguments": "/silent"
+                    },
+                    "ChangeLog": [
+                        "Minor UI and stability improvements."
+                    ],
+                    "ReleaseDate": "2023-10-16T18:00:00Z",
+                    "MinimumOsVersion": "10.0.17763",
+                    "RolloutPercentage": 100
+                },
+                {
                     "Version": "3.2.1",
                     "File": {
                         "Url": "https://github.com/ravesheep/ProtonVPN-windows/releases/download/3.2.1/ProtonVPN_v3.2.1.exe",
