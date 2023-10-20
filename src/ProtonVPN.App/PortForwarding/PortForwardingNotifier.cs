@@ -107,13 +107,13 @@ namespace ProtonVPN.PortForwarding
             string final = string.Format("SET protonPort={0}&", port);
             final += command;
 
-            System.Diagnostics.ProcessStartInfo procStartInfo = new System.Diagnostics.ProcessStartInfo("cmd", "/v /c " + final)
+            System.Diagnostics.ProcessStartInfo procStartInfo = new("cmd", "/v /c " + final)
             {
                 UseShellExecute = false,
                 CreateNoWindow = true
             };
 
-            System.Diagnostics.Process proc = new System.Diagnostics.Process
+            System.Diagnostics.Process proc = new()
             {
                 StartInfo = procStartInfo
             };
@@ -212,7 +212,7 @@ namespace ProtonVPN.PortForwarding
                     }
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return false;
             }
@@ -249,13 +249,13 @@ namespace ProtonVPN.PortForwarding
                 + "ELSE (timeout /T 2)"
                 , port);
 
-            System.Diagnostics.ProcessStartInfo procStartInfo = new System.Diagnostics.ProcessStartInfo("cmd", "/c " + command)
+            System.Diagnostics.ProcessStartInfo procStartInfo = new("cmd", "/c " + command)
             {
                 UseShellExecute = false,
                 CreateNoWindow = true
             };
 
-            System.Diagnostics.Process proc = new System.Diagnostics.Process
+            System.Diagnostics.Process proc = new()
             {
                 StartInfo = procStartInfo
             };
