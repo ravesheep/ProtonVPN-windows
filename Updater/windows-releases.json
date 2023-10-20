@@ -8,6 +8,24 @@
             "Name": "Stable",
             "Releases": [
                 {
+                    "Version": "3.2.4",
+                    "File": {
+                        "Url": "https://github.com/ravesheep/ProtonVPN-windows/releases/download/3.2.4/ProtonVPN_v3.2.4.exe",
+                        "SHA1CheckSum": "",
+                        "SHA256CheckSum": "",
+                        "SHA512CheckSum": "",
+                        "Arguments": "/silent"
+                    },
+                    "ChangeLog": [
+                        "Adds support for Georgian language.",
+                        "Fixes an issue where the colour of the sidebar profiles was not visible for some users.",
+                        "Fixes the duplicated taskbar icon issue."
+                    ],
+                    "ReleaseDate": "2023-10-20T10:00:00Z",
+                    "MinimumOsVersion": "10.0.17763",
+                    "RolloutPercentage": 100
+                },
+                {
                     "Version": "3.2.2",
                     "File": {
                         "Url": "https://github.com/ravesheep/ProtonVPN-windows/releases/download/3.2.2/ProtonVPN_v3.2.2.exe",
