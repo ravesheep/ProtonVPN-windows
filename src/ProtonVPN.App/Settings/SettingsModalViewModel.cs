@@ -680,7 +680,8 @@ namespace ProtonVPN.Settings
             {
                 NotifyOfPropertyChange(() => IsToShowPortForwardingAppInQuickSettings);
             }
-            else if (e.PropertyName.Equals(nameof(IAppSettings.PortForwardingApp))) {
+            else if (e.PropertyName.Equals(nameof(IAppSettings.PortForwardingApp)))
+            {
                 if (PreviousPortForwardingApp == PortForwardingApp.Custom && _appSettings.PortForwardingApp != PortForwardingApp.Custom)
                 {
                     RunCustomCommand(PortForwardingApp_Command_Off, ActivePortViewModel.PortForwardingValue);
@@ -688,8 +689,9 @@ namespace ProtonVPN.Settings
 
                 if (PortForwarding == true)
                 {
-                    _portForwardingManager.DisableAsync().Wait();
-                    _portForwardingManager.EnableAsync().Wait();
+                    await _portForwardingManager.DisableAsync();
+                    await Task.Delay(TimeSpan.FromSeconds(2));
+                    await _portForwardingManager.EnableAsync();
                 }
 
                 PreviousPortForwardingApp = _appSettings.PortForwardingApp;
@@ -770,7 +772,7 @@ namespace ProtonVPN.Settings
 
             NotifyOfPropertyChange(() => StartMinimizedModes);
             NotifyOfPropertyChange(() => StartMinimized);
-            
+
             await LoadProfiles();
         }
 
