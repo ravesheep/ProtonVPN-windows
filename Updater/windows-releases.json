@@ -11,9 +11,9 @@
                     "Version": "3.2.4",
                     "File": {
                         "Url": "https://github.com/ravesheep/ProtonVPN-windows/releases/download/3.2.4/ProtonVPN_v3.2.4.exe",
-                        "SHA1CheckSum": "",
-                        "SHA256CheckSum": "",
-                        "SHA512CheckSum": "",
+                        "SHA1CheckSum": "7188d6f95b1f662f9fca76cbbd237941ecd14219",
+                        "SHA256CheckSum": "a7cae49a1b7be3d78308baa1755ad09d0dec2d21f7275fd4f6d41a9055e22f1d",
+                        "SHA512CheckSum": "df6938630a948e2544aacf27c38bdb1a57e9d41480c58673d8fe93300eb6f3cba9d8f21a98e989d9ee1d372fb1ccad8a61ab5926dff182984e3a9aba589af9af",
                         "Arguments": "/silent"
                     },
                     "ChangeLog": [
@@ -21,7 +21,7 @@
                         "Fixes an issue where the colour of the sidebar profiles was not visible for some users.",
                         "Fixes the duplicated taskbar icon issue."
                     ],
-                    "ReleaseDate": "2023-10-20T10:00:00Z",
+                    "ReleaseDate": "2023-10-20T12:00:00Z",
                     "MinimumOsVersion": "10.0.17763",
                     "RolloutPercentage": 100
                 },
