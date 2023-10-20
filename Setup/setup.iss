@@ -15,8 +15,6 @@
 #define NetworkDriverName "ProtonVPNCallout"
 #define NetworkDriverFileName "Resources\ProtonVPN.CalloutDriver.sys"
 
-#define ProtonDriveDownloaderName "ProtonDrive.Downloader.exe"
-
 #define Hash ""
 #define VersionFolder "v" + MyAppVersion
 #define SourcePath "src/bin/win-x64/publish"
@@ -125,10 +123,6 @@ Name: "{commondesktop}\Proton VPN"; Filename: "{app}\{#LauncherExeName}"; Tasks:
 
 [Tasks]
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; 
-Name: "installProtonDrive"; Description: "{cm:InstallProtonDriveTitle}"; Check: ShouldDisplayProtonDriveCheckbox;
-
-[Run]
-Filename: "{app}\{#VersionFolder}\{#ProtonDriveDownloaderName}"; Parameters: "{code:GetDriveInstallPath}"; Tasks: installProtonDrive; Flags: postinstall nowait runascurrentuser skipifsilent;
 
 [Languages]
 Name: "en_US"; MessagesFile: "compiler:Default.isl,Strings\Default.isl"
@@ -446,20 +440,6 @@ begin
     res := RemoveWfpObjects();
     Log('RemoveWfpObjects returned: ' + IntToStr(res));
   end;
-end;
-
-function ShouldDisplayProtonDriveCheckbox: Boolean;
-begin
-  Result := IsProductInstalled('{F3B95BD2-1311-4B82-8B4A-B9EB7C0500ED}') = 0;
-end;
-
-function GetDriveInstallPath(value: String): String;
-var
-  path: String;
-begin
-    path := WizardForm.DirEdit.Text;
-    StringChangeEx(path, '\Proton\VPN', '\Proton\Drive', True);
-    Result := '"' + path + '"';
 end;
 
 function IsUpgrade: Boolean;
