@@ -17,6 +17,7 @@
 
 #define Hash ""
 #define VersionFolder "v" + MyAppVersion
+#define AppFolder "Proton\VPN"
 #define SourcePath "src/bin/win-x64/publish"
 #define IsBTISource SourcePath == "src/bin/win-x64/BTI/publish"
 #if IsBTISource
@@ -102,6 +103,12 @@ Source: "..\{#SourcePath}\uk-UA\ProtonVPN.Translations.resources.dll"; DestDir: 
 Source: "..\{#SourcePath}\tr-TR\ProtonVPN.Translations.resources.dll"; DestDir: "{app}\{#VersionFolder}\tr-TR"; Flags: signonce;
 Source: "..\{#SourcePath}\be-BY\ProtonVPN.Translations.resources.dll"; DestDir: "{app}\{#VersionFolder}\be-BY"; Flags: signonce;
 Source: "..\{#SourcePath}\ka-GE\ProtonVPN.Translations.resources.dll"; DestDir: "{app}\{#VersionFolder}\ka-GE"; Flags: signonce;
+Source: "..\{#SourcePath}\el-GR\ProtonVPN.Translations.resources.dll"; DestDir: "{app}\{#VersionFolder}\el-GR"; Flags: signonce;
+Source: "..\{#SourcePath}\fi-FI\ProtonVPN.Translations.resources.dll"; DestDir: "{app}\{#VersionFolder}\fi-FI"; Flags: signonce;
+Source: "..\{#SourcePath}\ko-KR\ProtonVPN.Translations.resources.dll"; DestDir: "{app}\{#VersionFolder}\ko-KR"; Flags: signonce;
+Source: "..\{#SourcePath}\zh-TW\ProtonVPN.Translations.resources.dll"; DestDir: "{app}\{#VersionFolder}\zh-TW"; Flags: signonce;
+Source: "..\{#SourcePath}\sv-SE\ProtonVPN.Translations.resources.dll"; DestDir: "{app}\{#VersionFolder}\sv-SE"; Flags: signonce;
+Source: "..\{#SourcePath}\ja-JP\ProtonVPN.Translations.resources.dll"; DestDir: "{app}\{#VersionFolder}\ja-JP"; Flags: signonce;
 
 Source: "..\{#SourcePath}\Resources\*.dll"; DestDir: "{app}\{#VersionFolder}\Resources"; Flags: signonce;
 Source: "..\{#SourcePath}\Resources\*.exe"; DestDir: "{app}\{#VersionFolder}\Resources"; Flags: signonce;
@@ -127,7 +134,9 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}";
 [Languages]
 Name: "en_US"; MessagesFile: "compiler:Default.isl,Strings\Default.isl"
 Name: "cs_CZ"; MessagesFile: "compiler:Languages\Czech.isl,Strings\Czech.isl"
+Name: "ja_JP"; MessagesFile: "compiler:Languages\Japanese.isl,Strings\Japanese.isl"
 Name: "de_DE"; MessagesFile: "compiler:Languages\German.isl,Strings\German.isl"
+Name: "fi_FI"; MessagesFile: "compiler:Languages\Finnish.isl,Strings\Finnish.isl"
 Name: "fr_FR"; MessagesFile: "compiler:Languages\French.isl,Strings\French.isl"
 Name: "nl_NL"; MessagesFile: "compiler:Languages\Dutch.isl,Strings\Dutch.isl"
 Name: "it_IT"; MessagesFile: "compiler:Languages\Italian.isl,Strings\Italian.isl"
@@ -146,6 +155,7 @@ Type: filesandordirs; Name: "{app}\{#VersionFolder}\Resources"
 
 [Dirs]
 Name: "{localappdata}\ProtonVPN\DiagnosticLogs"
+Name: "{commonappdata}\ProtonVPN\Updates"; AfterInstall: SetFolderPermissions;
 
 [Code]
 function InitLogger(logger: Longword): Integer;
@@ -162,6 +172,9 @@ external 'UninstallProduct@files:ProtonVPN.InstallActions.x86.dll cdecl delayloa
 
 function IsProductInstalled(upgradeCode: String): Integer;
 external 'IsProductInstalled@files:ProtonVPN.InstallActions.x86.dll cdecl delayload';
+
+function SetUpdatesFolderPermission(updatesFolderPath: String): Integer;
+external 'SetUpdatesFolderPermission@files:ProtonVPN.InstallActions.x86.dll cdecl delayload';
 
 function UninstallTapAdapter(tapFilesPath: String): Integer;
 external 'UninstallTapAdapter@ProtonVPN.InstallActions.x86.dll cdecl delayload uninstallonly';
@@ -225,25 +238,34 @@ begin
   end;
 end;
 
+procedure SetFolderPermissions();
+begin
+  SetUpdatesFolderPermission(ExpandConstant('{commonappdata}\ProtonVPN\Updates'));
+end;
+
 procedure DeleteNonRunningVersions(const Directory: string);
 var
   VersionFolder: TFindRec;
-  VersionFolderPath: String;
+  VersionFolderPath, ProcessPath: String;
   i: Integer;
   Processes: array of String;
   IsRunningProcessFound: Boolean;
 begin
+  Log('Using directory ' + Directory + ' to find previous app versions for deletion');
   Processes := ['ProtonVPN.exe', 'ProtonVPNService.exe', 'ProtonVPN.WireGuardService.exe'];
   if FindFirst(ExpandConstant(Directory + '\v*'), VersionFolder) then
   try
     repeat
+      Log('Found version folder ' + VersionFolder.Name);
       VersionFolderPath := AddBackslash(Directory) + AddBackslash(VersionFolder.Name)
       IsRunningProcessFound := False;
       for i := 0 to GetArrayLength(Processes) - 1 do
       begin
-        if IsProcessRunningByPath(VersionFolderPath + Processes[i]) then
+        ProcessPath := VersionFolderPath + Processes[i];
+        Log('Checking if the process ' + ProcessPath + ' is running');
+        if IsProcessRunningByPath(ProcessPath) then
         begin
-          Log('Running process detected: ' + VersionFolderPath + Processes[i]);
+          Log('Running process detected: ' + ProcessPath);
           IsRunningProcessFound := True;
           Break;
         end;
@@ -376,13 +398,24 @@ begin
   Log('Service uninstall returned: ' + IntToStr(Result));
 end;
 
-function PrepareToInstall(var NeedsRestart: Boolean): String;
+function IsUpgrade: Boolean;
 begin
-    DeleteNonRunningVersions(ExpandConstant('{app}'));
+  Result := FileExists(ExpandConstant('{app}\{#LauncherExeName}'));
+end;
+
+function PrepareToInstall(var NeedsRestart: Boolean): String;
+var
+  vpnFolderPath: String;
+begin
+    vpnFolderPath := '{app}';
+    if IsUpgrade = False then
+      vpnFolderPath := vpnFolderPath + '\{#AppFolder}';
+
+    DeleteNonRunningVersions(ExpandConstant(vpnFolderPath));
     Log('Trying to save user settings for the old ProtonVPN app if it is installed');
     SaveOldUserConfigFolder();
     Log('Trying to update taskbar icon path if exists');
-    UpdateTaskbarIconTarget(ExpandConstant('{app}\{#VersionFolder}\{#MyAppExeName}'));
+    UpdateTaskbarIconTarget(ExpandConstant(vpnFolderPath + '\{#VersionFolder}\{#MyAppExeName}'));
     Log('Trying to uninstall an old version of ProtonVPN app');
     UninstallProduct('{2B10124D-2F81-4BB1-9165-4F9B1B1BA0F9}');
     Log('Trying to uninstall an old version of ProtonVPN TUN adapter');
@@ -451,6 +484,6 @@ procedure CurPageChanged(CurPageID: Integer);
 begin
     if (CurPageID = wpPreparing) and (IsInstallPathModified = False) and (IsUpgrade = False) then begin
       IsInstallPathModified := true;
-      WizardForm.DirEdit.Text := WizardForm.DirEdit.Text + '\Proton\VPN';
+      WizardForm.DirEdit.Text := WizardForm.DirEdit.Text + ExpandConstant('\{#AppFolder}');
     end;
 end;
