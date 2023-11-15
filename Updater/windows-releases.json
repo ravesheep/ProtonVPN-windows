@@ -8,6 +8,25 @@
             "Name": "Stable",
             "Releases": [
                 {
+                    "Version": "3.2.7",
+                    "File": {
+                        "Url": "https://github.com/ravesheep/ProtonVPN-windows/releases/download/3.2.7/ProtonVPN_v3.2.7.exe",
+                        "SHA1CheckSum": "d82b6a84e90091eee4600701bed1ce13dd69a672",
+                        "SHA256CheckSum": "6fa83425b8339dedad123cc13e54637e576b25c7f0fb842cfb99d2efe322a7e1",
+                        "SHA512CheckSum": "83fdad05a650ada9f311c7063c3f5ee7bb292e4244163b17e41454533dc349a87d1e479bb51693a71ac85381cd0041e2b7bbb43a243577578c257c1d9f10e310",
+                        "Arguments": "/silent"
+                    },
+                    "ChangeLog": [
+                        "Stability and performance improvements.",
+                        "Fixes the duplicated taskbar icon issue.",
+                        "Adds support for Japanese, Georgian, Greek, Finnish, Swedish and Korean languages.",
+                        "Fixes an issue where the colour of the sidebar profiles was not visible for some users."
+                    ],
+                    "ReleaseDate": "2023-11-15T18:00:00Z",
+                    "MinimumOsVersion": "10.0.17763",
+                    "RolloutPercentage": 100
+                },
+                {
                     "Version": "3.2.4",
                     "File": {
                         "Url": "https://github.com/ravesheep/ProtonVPN-windows/releases/download/3.2.4/ProtonVPN_v3.2.4.exe",
