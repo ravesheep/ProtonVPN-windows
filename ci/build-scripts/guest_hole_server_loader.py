@@ -12,12 +12,7 @@ def load():
 
     print('Started updating guest hole servers json')
 
-    proxies = {
-        'http': 'http://proxy.plabs.ch:3128',
-        'https': 'http://proxy.plabs.ch:3128',
-    }
-
-    response = requests.get(server_list_api_url, proxies=proxies)
+    response = requests.get(server_list_api_url)
     original_json = response.json()
 
     logical_servers = original_json["LogicalServers"]
