@@ -155,7 +155,7 @@ Type: filesandordirs; Name: "{app}\{#VersionFolder}\Resources"
 
 [Dirs]
 Name: "{localappdata}\ProtonVPN\DiagnosticLogs"
-Name: "{commonappdata}\ProtonVPN\Updates"; AfterInstall: SetFolderPermissions;
+Name: "{commonappdata}\ProtonVPN\Updates";
 
 [Code]
 function InitLogger(logger: Longword): Integer;
