@@ -476,11 +476,6 @@ begin
   end;
 end;
 
-function IsUpgrade: Boolean;
-begin
-  Result := FileExists(ExpandConstant('{app}\{#LauncherExeName}'));
-end;
-
 procedure CurPageChanged(CurPageID: Integer);
 begin
     if (CurPageID = wpPreparing) and (IsInstallPathModified = False) and (IsUpgrade = False) then begin
