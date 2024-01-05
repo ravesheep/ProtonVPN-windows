@@ -8,6 +8,22 @@
             "Name": "Stable",
             "Releases": [
                 {
+                    "Version": "3.2.9",
+                    "File": {
+                        "Url": "https://github.com/ravesheep/ProtonVPN-windows/releases/download/3.2.9/ProtonVPN_v3.2.9.exe",
+                        "SHA1CheckSum": "08fa974e7a40f71c27a2ac4cef2949ff0ecd05ed",
+                        "SHA256CheckSum": "d4868cedf52d87a9a83c79ccb7d9a6dcfa8432e358f859b936f1f6ef9f1cda3f",
+                        "SHA512CheckSum": "bb4c1e5372cd8406da649776b0fd73dec7407421e9b8e405ec58fb7de4bd66933cee8da1066bbc0c637380359cf8e483aef7b49bc1ab02c61377f5deb6f666d4",
+                        "Arguments": "/silent"
+                    },
+                    "ChangeLog": [
+                        "Adds support for Norwegian language."
+                    ],
+                    "ReleaseDate": "2024-01-05T16:00:00Z",
+                    "MinimumOsVersion": "10.0.17763",
+                    "RolloutPercentage": 100
+                },
+                {
                     "Version": "3.2.8",
                     "File": {
                         "Url": "https://github.com/ravesheep/ProtonVPN-windows/releases/download/3.2.8/ProtonVPN_v3.2.8.exe",
