@@ -8,6 +8,23 @@
             "Name": "Stable",
             "Releases": [
                 {
+                    "Version": "3.2.10",
+                    "File": {
+                        "Url": "https://github.com/ravesheep/ProtonVPN-windows/releases/download/3.2.10/ProtonVPN_v3.2.10.exe",
+                        "SHA1CheckSum": "0174892764789b3db84f34e423c733396b87fa1d",
+                        "SHA256CheckSum": "65736bedc51a3a096ac97840fcdd1685f965cb56606e072df09bc63ef344161c",   
+                        "SHA512CheckSum": "a20dee5564f98f3b8e83afbd8d47f47c524321de52eb3af2940e1f0c5ebde3a34a4c7fa18a44b9f8e1e13d4e097be7b4c3393ec4d7fc0a3480e016e63ce5bd1d",
+                        "Arguments": "/silent"
+                    },
+                    "ChangeLog": [
+                        "Minor security improvements.",
+                        "Fixes an issue where human verification was not working for some users."
+                    ],
+                    "ReleaseDate": "2024-02-22T11:30:00Z",
+                    "MinimumOsVersion": "10.0.17763",
+                    "RolloutPercentage": 100
+                },
+                {
                     "Version": "3.2.9",
                     "File": {
                         "Url": "https://github.com/ravesheep/ProtonVPN-windows/releases/download/3.2.9/ProtonVPN_v3.2.9.exe",
