@@ -401,16 +401,16 @@
     <Setting Name="TorrentAppMode" Type="System.String" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
-    <Setting Name="TorrentAppWebUIPort" Type="System.Int32" Scope="User">
+    <Setting Name="TorrentAppPort" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">8080</Value>
     </Setting>
-    <Setting Name="TorrentAppWebUIAuthRequired" Type="System.Boolean" Scope="User">
+    <Setting Name="TorrentAppAuthRequired" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="TorrentAppWebUIAuthUsername" Type="System.String" Scope="User">
+    <Setting Name="TorrentAppUsername" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="TorrentAppWebUIAuthPassword" Type="System.String" Scope="User">
+    <Setting Name="TorrentAppPassword" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="IsToAutoUpdate" Type="System.Boolean" Scope="User">

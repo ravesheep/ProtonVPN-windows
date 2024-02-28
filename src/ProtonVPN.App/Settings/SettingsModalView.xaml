@@ -667,20 +667,20 @@ along with ProtonVPN.  If not, see <https://www.gnu.org/licenses/>.
                                 <StackPanel Orientation="Horizontal">
                                     <TextBlock Style="{StaticResource SubSettingIcon}" />
                                     <Label Style="{StaticResource SettingName}" Margin="5,0,0,0"
-                                           Content="{translations:Loc Settings_Advanced_lbl_PortForwarding_TorrentApp_WebUI_Port}"/>
+                                           Content="{translations:Loc Settings_Advanced_lbl_PortForwarding_TorrentApp_Port}"/>
                                     <icons:InfoCircleFilled Style="{StaticResource InfoCircle}"
-                                                            ToolTip="{translations:Loc Settings_Advanced_lbl_PortForwarding_TorrentApp_WebUI_Port_Info}"/>
+                                                            ToolTip="{translations:Loc Settings_Advanced_lbl_PortForwarding_TorrentApp_Port_Info}"/>
                                 </StackPanel>
 
                                 <TextBox HorizontalAlignment="Right"
                                           TextWrapping="Wrap"
                                           TextAlignment="Center"
                                           Style="{StaticResource SettingsPlaceholderTextBox}"
-                                          Tag="{translations:Loc Settings_Advanced_lbl_Portforwarding_TorrentApp_WebUI_Port_msg_Watermark}"
-                                          Text="{Binding TorrentAppWebUIPort, UpdateSourceTrigger=PropertyChanged}"
+                                          Tag="{translations:Loc Settings_Advanced_lbl_PortForwarding_TorrentApp_Port_msg_Watermark}"
+                                          Text="{Binding TorrentAppPort, UpdateSourceTrigger=PropertyChanged}"
                                           MaxLength="6"
                                           Width="60"
-                                          AutomationProperties.AutomationId="{StaticResource PortForwardingTorrentAppWebUIPortTextbox}"/>
+                                          AutomationProperties.AutomationId="{StaticResource PortForwardingTorrentAppPortTextbox}"/>
                             </DockPanel>
                         </Border>
 
@@ -690,16 +690,16 @@ along with ProtonVPN.  If not, see <https://www.gnu.org/licenses/>.
                                 <StackPanel Orientation="Horizontal">
                                     <TextBlock Style="{StaticResource SubSettingIcon}" />
                                     <Label Style="{StaticResource SettingName}" Margin="5,0,0,0"
-                                           Content="{translations:Loc Settings_Advanced_lbl_PortForwarding_TorrentApp_WebUI_AuthRequired}"/>
+                                           Content="{translations:Loc Settings_Advanced_lbl_PortForwarding_TorrentApp_AuthRequired}"/>
                                     <icons:InfoCircleFilled Style="{StaticResource InfoCircle}"
-                                                            ToolTip="{translations:Loc Settings_Advanced_lbl_PortForwarding_TorrentApp_WebUI_AuthRequired_Info}"/>
+                                                            ToolTip="{translations:Loc Settings_Advanced_lbl_PortForwarding_TorrentApp_AuthRequired_Info}"/>
                                 </StackPanel>
 
                                 <CheckBox Style="{StaticResource ToggleSwitch}"
                                           Margin="0,0,0,0"
                                           HorizontalAlignment="Right"
-                                          IsChecked="{Binding TorrentAppWebUIAuthRequired}"
-                                          AutomationProperties.AutomationId="{StaticResource PortForwardingTorrentAppWebUIAuthRequiredCheckbox}"/>
+                                          IsChecked="{Binding TorrentAppAuthRequired}"
+                                          AutomationProperties.AutomationId="{StaticResource PortForwardingTorrentAppAuthRequiredCheckbox}"/>
                             </DockPanel>
                         </Border>
 
@@ -709,20 +709,20 @@ along with ProtonVPN.  If not, see <https://www.gnu.org/licenses/>.
                                 <StackPanel Orientation="Horizontal">
                                     <TextBlock Style="{StaticResource SubSettingIcon}" />
                                     <Label Style="{StaticResource SettingName}" Margin="5,0,0,0"
-                                           Content="{translations:Loc Settings_Advanced_lbl_PortForwarding_TorrentApp_WebUI_Auth_Username}"/>
+                                           Content="{translations:Loc Settings_Advanced_lbl_PortForwarding_TorrentApp_Username}"/>
                                     <icons:InfoCircleFilled Style="{StaticResource InfoCircle}"
-                                                            ToolTip="{translations:Loc Settings_Advanced_lbl_PortForwarding_TorrentApp_WebUI_Auth_Username_Info}"/>
+                                                            ToolTip="{translations:Loc Settings_Advanced_lbl_PortForwarding_TorrentApp_Username_Info}"/>
                                 </StackPanel>
 
                                 <TextBox HorizontalAlignment="Right"
                                           TextWrapping="Wrap"
                                           TextAlignment="Center"
                                           Style="{StaticResource SettingsPlaceholderTextBox}"
-                                          Tag="{translations:Loc Settings_Advanced_lbl_Portforwarding_TorrentApp_WebUI_Auth_Username_msg_Watermark}"
-                                          Text="{Binding TorrentAppWebUIAuthUsername, UpdateSourceTrigger=PropertyChanged}"
+                                          Tag="{translations:Loc Settings_Advanced_lbl_PortForwarding_TorrentApp_Username_msg_Watermark}"
+                                          Text="{Binding TorrentAppUsername, UpdateSourceTrigger=PropertyChanged}"
                                           MaxLength="200"
                                           Width="160"
-                                          AutomationProperties.AutomationId="{StaticResource PortForwardingTorrentAppWebUIAuthUsernameTextbox}"/>
+                                          AutomationProperties.AutomationId="{StaticResource PortForwardingTorrentAppUsernameTextbox}"/>
                             </DockPanel>
                         </Border>
 
@@ -732,9 +732,9 @@ along with ProtonVPN.  If not, see <https://www.gnu.org/licenses/>.
                                 <StackPanel Orientation="Horizontal">
                                     <TextBlock Style="{StaticResource SubSettingIcon}" />
                                     <Label Style="{StaticResource SettingName}" Margin="5,0,0,0"
-                                           Content="{translations:Loc Settings_Advanced_lbl_PortForwarding_TorrentApp_WebUI_Auth_Password}"/>
+                                           Content="{translations:Loc Settings_Advanced_lbl_PortForwarding_TorrentApp_Password}"/>
                                     <icons:InfoCircleFilled Style="{StaticResource InfoCircle}"
-                                                            ToolTip="{translations:Loc Settings_Advanced_lbl_PortForwarding_TorrentApp_WebUI_Auth_Password_Info}"/>
+                                                            ToolTip="{translations:Loc Settings_Advanced_lbl_PortForwarding_TorrentApp_Password_Info}"/>
                                 </StackPanel>
 
                                 <PasswordBox HorizontalAlignment="Right"
@@ -749,7 +749,7 @@ along with ProtonVPN.  If not, see <https://www.gnu.org/licenses/>.
                                           PasswordChanged="PasswordBox_PasswordChanged"
                                           MaxLength="200"
                                           Width="160"
-                                          AutomationProperties.AutomationId="{StaticResource PortForwardingTorrentAppWebUIAuthPasswordTextbox}"/>
+                                          AutomationProperties.AutomationId="{StaticResource PortForwardingTorrentAppPasswordTextbox}"/>
                             </DockPanel>
                         </Border>
 

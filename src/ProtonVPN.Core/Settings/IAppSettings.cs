@@ -91,10 +91,10 @@ namespace ProtonVPN.Core.Settings
         string PortForwardingCommand_On { get; set; }
         string PortForwardingCommand_Off { get; set; }
         TorrentAppMode TorrentAppMode { get; set; }
-        int TorrentAppWebUIPort { get; set; }
-        bool TorrentAppWebUIAuthRequired { get; set; }
-        string TorrentAppWebUIAuthUsername { get; set; }
-        string TorrentAppWebUIAuthPassword { get; set; }
+        int TorrentAppPort { get; set; }
+        bool TorrentAppAuthRequired { get; set; }
+        string TorrentAppUsername { get; set; }
+        string TorrentAppPassword { get; set; }
         bool DoNotShowKillSwitchConfirmationDialog { get; set; }
         bool DoNotShowEnableSmartProtocolDialog { get; set; }
         bool DoNotShowDiscourageSecureCoreDialog { get; set; }

@@ -362,7 +362,7 @@ namespace ProtonVPN.Settings
         public bool IsToShowPortForwardingCustomAppSettings => IsToShowPortForwardingAppSettings && SelectedPortForwardingApp == PortForwardingApp.Custom;
         public bool IsToShowPortForwardingTorrentAppSettings => IsToShowPortForwardingAppSettings && SelectedPortForwardingApp == PortForwardingApp.qBittorrent;
         public bool IsToShowPortForwardingTorrentAppWebUI => IsToShowPortForwardingTorrentAppSettings && SelectedTorrentAppMode == TorrentAppMode.WebUI;
-        public bool IsToShowPortForwardingTorrentAppWebUIAuth => IsToShowPortForwardingTorrentAppWebUI && _appSettings.TorrentAppWebUIAuthRequired;
+        public bool IsToShowPortForwardingTorrentAppWebUIAuth => IsToShowPortForwardingTorrentAppWebUI && _appSettings.TorrentAppAuthRequired;
 
         public bool PortForwardingAppInQuickSettings
         {
@@ -414,28 +414,28 @@ namespace ProtonVPN.Settings
             set => _appSettings.TorrentAppMode = value;
         }
 
-        public int TorrentAppWebUIPort
+        public int TorrentAppPort
         {
-            get => _appSettings.TorrentAppWebUIPort;
-            set => _appSettings.TorrentAppWebUIPort = value;
+            get => _appSettings.TorrentAppPort;
+            set => _appSettings.TorrentAppPort = value;
         }
 
-        public bool TorrentAppWebUIAuthRequired
+        public bool TorrentAppAuthRequired
         {
-            get => _appSettings.TorrentAppWebUIAuthRequired;
-            set => _appSettings.TorrentAppWebUIAuthRequired = value;
+            get => _appSettings.TorrentAppAuthRequired;
+            set => _appSettings.TorrentAppAuthRequired = value;
         }
 
-        public string TorrentAppWebUIAuthUsername
+        public string TorrentAppUsername
         {
-            get => _appSettings.TorrentAppWebUIAuthUsername;
-            set => _appSettings.TorrentAppWebUIAuthUsername = value;
+            get => _appSettings.TorrentAppUsername;
+            set => _appSettings.TorrentAppUsername = value;
         }
 
-        public string TorrentAppWebUIAuthPassword
+        public string TorrentAppPassword
         {
-            get => _appSettings.TorrentAppWebUIAuthPassword;
-            set => _appSettings.TorrentAppWebUIAuthPassword = value;
+            get => _appSettings.TorrentAppPassword;
+            set => _appSettings.TorrentAppPassword = value;
         }
 
         public bool DoHEnabled
@@ -706,7 +706,7 @@ namespace ProtonVPN.Settings
                 NotifyOfPropertyChange(() => IsToShowPortForwardingTorrentAppWebUI);
                 NotifyOfPropertyChange(() => IsToShowPortForwardingTorrentAppWebUIAuth);
             }
-            else if (e.PropertyName.Equals(nameof(IAppSettings.TorrentAppWebUIAuthRequired)))
+            else if (e.PropertyName.Equals(nameof(IAppSettings.TorrentAppAuthRequired)))
             {
                 NotifyOfPropertyChange(() => IsToShowPortForwardingTorrentAppWebUIAuth);
             }

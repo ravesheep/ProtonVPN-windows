@@ -126,7 +126,7 @@ namespace ProtonVPN.PortForwarding
             await _semaphore.WaitAsync();
 
             // Get cookie
-            if (_appSettings.TorrentAppWebUIAuthRequired && !_isCookieSet)
+            if (_appSettings.TorrentAppAuthRequired && !_isCookieSet)
             {
                 for (int i = 0; i < 5; i++)
                 {
@@ -187,7 +187,7 @@ namespace ProtonVPN.PortForwarding
         {
             try
             {
-                string url = $"http://localhost:{_appSettings.TorrentAppWebUIPort}{apiPath}";
+                string url = $"http://localhost:{_appSettings.TorrentAppPort}{apiPath}";
 
                 FormUrlEncodedContent urlContent = new(content);
 
@@ -198,7 +198,7 @@ namespace ProtonVPN.PortForwarding
                     return true;
                 }
                 // Likely requires authentication, cookie unset or invalid
-                else if (((int)response.StatusCode == 401 || (int)response.StatusCode == 403) && _appSettings.TorrentAppWebUIAuthRequired && doGetCookie)
+                else if (((int)response.StatusCode == 401 || (int)response.StatusCode == 403) && _appSettings.TorrentAppAuthRequired && doGetCookie)
                 {
                     _isCookieSet = await GetCookieAsync();
 
@@ -224,8 +224,8 @@ namespace ProtonVPN.PortForwarding
         {
             Dictionary<string, string> content = new()
                 {
-                    { "username", _appSettings.TorrentAppWebUIAuthUsername },
-                    { "password", _appSettings.TorrentAppWebUIAuthPassword }
+                    { "username", _appSettings.TorrentAppUsername },
+                    { "password", _appSettings.TorrentAppPassword }
                 };
 
             return await PostWebUIRequestAsync("/api/v2/auth/login", content, false);

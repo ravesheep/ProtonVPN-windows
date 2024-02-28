@@ -3197,37 +3197,37 @@ Please follow &lt;Hyperlink Command="{Binding OpenArticleCommand}"&gt;&lt;Run Te
   <data name="Settings_Advanced_lbl_PortForwarding_TorrentApp_CommandLine" xml:space="preserve">
     <value>via Command Line</value>
   </data>
-  <data name="Settings_Advanced_lbl_PortForwarding_TorrentApp_WebUI_Port" xml:space="preserve">
+  <data name="Settings_Advanced_lbl_PortForwarding_TorrentApp_Port" xml:space="preserve">
     <value>Web UI port</value>
   </data>
-  <data name="Settings_Advanced_lbl_PortForwarding_TorrentApp_WebUI_Port_Info" xml:space="preserve">
+  <data name="Settings_Advanced_lbl_PortForwarding_TorrentApp_Port_Info" xml:space="preserve">
     <value>The port which qBittorrent is listening to, typically defaults to 8080.</value>
   </data>
-  <data name="Settings_Advanced_lbl_Portforwarding_TorrentApp_WebUI_Port_msg_Watermark" xml:space="preserve">
+  <data name="Settings_Advanced_lbl_PortForwarding_TorrentApp_Port_msg_Watermark" xml:space="preserve">
     <value>Port</value>
   </data>
-  <data name="Settings_Advanced_lbl_PortForwarding_TorrentApp_WebUI_AuthRequired" xml:space="preserve">
+  <data name="Settings_Advanced_lbl_PortForwarding_TorrentApp_AuthRequired" xml:space="preserve">
     <value>Requires authentication</value>
   </data>
-  <data name="Settings_Advanced_lbl_PortForwarding_TorrentApp_WebUI_AuthRequired_Info" xml:space="preserve">
+  <data name="Settings_Advanced_lbl_PortForwarding_TorrentApp_AuthRequired_Info" xml:space="preserve">
     <value>Is a login required to use qBittorrent's Web UI? Authentication can often be disabled locally.</value>
   </data>
-  <data name="Settings_Advanced_lbl_PortForwarding_TorrentApp_WebUI_Auth_Username" xml:space="preserve">
+  <data name="Settings_Advanced_lbl_PortForwarding_TorrentApp_Username" xml:space="preserve">
     <value>Username</value>
   </data>
-  <data name="Settings_Advanced_lbl_PortForwarding_TorrentApp_WebUI_Auth_Username_Info" xml:space="preserve">
+  <data name="Settings_Advanced_lbl_PortForwarding_TorrentApp_Username_Info" xml:space="preserve">
     <value>The username required by qBittorrent.</value>
   </data>
-  <data name="Settings_Advanced_lbl_Portforwarding_TorrentApp_WebUI_Auth_Username_msg_Watermark" xml:space="preserve">
+  <data name="Settings_Advanced_lbl_PortForwarding_TorrentApp_Username_msg_Watermark" xml:space="preserve">
     <value>Username</value>
   </data>
-  <data name="Settings_Advanced_lbl_PortForwarding_TorrentApp_WebUI_Auth_Password" xml:space="preserve">
+  <data name="Settings_Advanced_lbl_PortForwarding_TorrentApp_Password" xml:space="preserve">
     <value>Password</value>
   </data>
-  <data name="Settings_Advanced_lbl_PortForwarding_TorrentApp_WebUI_Auth_Password_Info" xml:space="preserve">
+  <data name="Settings_Advanced_lbl_PortForwarding_TorrentApp_Password_Info" xml:space="preserve">
     <value>The password required by qBittorrent.</value>
   </data>
-  <data name="Settings_Advanced_lbl_Portforwarding_TorrentApp_WebUI_Auth_Password_msg_Watermark" xml:space="preserve">
+  <data name="Settings_Advanced_lbl_PortForwarding_TorrentApp_Password_msg_Watermark" xml:space="preserve">
     <value>Password</value>
   </data>
   <data name="Modal_DiscourageSecureCore_ActivateSecureCore" xml:space="preserve">

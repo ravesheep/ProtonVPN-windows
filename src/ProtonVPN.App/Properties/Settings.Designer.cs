@@ -1617,48 +1617,48 @@ namespace ProtonVPN.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("8080")]
-        public int TorrentAppWebUIPort {
+        public int TorrentAppPort {
             get {
-                return ((int)(this["TorrentAppWebUIPort"]));
+                return ((int)(this["TorrentAppPort"]));
             }
             set {
-                this["TorrentAppWebUIPort"] = value;
+                this["TorrentAppPort"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool TorrentAppWebUIAuthRequired {
+        public bool TorrentAppAuthRequired {
             get {
-                return ((bool)(this["TorrentAppWebUIAuthRequired"]));
+                return ((bool)(this["TorrentAppAuthRequired"]));
             }
             set {
-                this["TorrentAppWebUIAuthRequired"] = value;
+                this["TorrentAppAuthRequired"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string TorrentAppWebUIAuthUsername {
+        public string TorrentAppUsername {
             get {
-                return ((string)(this["TorrentAppWebUIAuthUsername"]));
+                return ((string)(this["TorrentAppUsername"]));
             }
             set {
-                this["TorrentAppWebUIAuthUsername"] = value;
+                this["TorrentAppUsername"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string TorrentAppWebUIAuthPassword {
+        public string TorrentAppPassword {
             get {
-                return ((string)(this["TorrentAppWebUIAuthPassword"]));
+                return ((string)(this["TorrentAppPassword"]));
             }
             set {
-                this["TorrentAppWebUIAuthPassword"] = value;
+                this["TorrentAppPassword"] = value;
             }
         }
         

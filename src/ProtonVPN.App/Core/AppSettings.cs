@@ -453,25 +453,25 @@ namespace ProtonVPN.Core
             set => Set(value);
         }
 
-        public int TorrentAppWebUIPort
+        public int TorrentAppPort
         {
             get => Get<int>();
             set => Set(value);
         }
 
-        public bool TorrentAppWebUIAuthRequired
+        public bool TorrentAppAuthRequired
         {
             get => Get<bool>();
             set => Set(value);
         }
 
-        public string TorrentAppWebUIAuthUsername
+        public string TorrentAppUsername
         {
             get => Get<string>();
             set => Set(value);
         }
 
-        public string TorrentAppWebUIAuthPassword
+        public string TorrentAppPassword
         {
             get => Get<string>();
             set => Set(value);

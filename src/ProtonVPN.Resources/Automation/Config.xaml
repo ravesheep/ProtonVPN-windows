@@ -100,10 +100,10 @@ along with ProtonVPN.  If not, see <https://www.gnu.org/licenses/>.
     <system:String x:Key="PortForwardingCustomAppCommandOnTextbox">PortForwardingCustomAppCommandOnTextbox</system:String>
     <system:String x:Key="PortForwardingCustomAppCommandOffTextbox">PortForwardingCustomAppCommandOffTextbox</system:String>
     <system:String x:Key="PortForwardingTorrentAppModeCheckbox">PortForwardingTorrentAppModeCheckbox</system:String>
-    <system:String x:Key="PortForwardingTorrentAppWebUIPortTextbox">PortForwardingTorrentAppWebUIPortTextbox</system:String>
-    <system:String x:Key="PortForwardingTorrentAppWebUIAuthRequiredCheckbox">PortForwardingTorrentAppWebUIAuthRequiredCheckbox</system:String>
-    <system:String x:Key="PortForwardingTorrentAppWebUIAuthUsernameTextbox">PortForwardingTorrentAppWebUIAuthUsernameTextbox</system:String>
-    <system:String x:Key="PortForwardingTorrentAppWebUIAuthPasswordTextbox">PortForwardingTorrentAppWebUIAuthPasswordTextbox</system:String>
+    <system:String x:Key="PortForwardingTorrentAppPortTextbox">PortForwardingTorrentAppPortTextbox</system:String>
+    <system:String x:Key="PortForwardingTorrentAppAuthRequiredCheckbox">PortForwardingTorrentAppAuthRequiredCheckbox</system:String>
+    <system:String x:Key="PortForwardingTorrentAppUsernameTextbox">PortForwardingTorrentAppUsernameTextbox</system:String>
+    <system:String x:Key="PortForwardingTorrentAppPasswordTextbox">PortForwardingTorrentAppPasswordTextbox</system:String>
     <system:String x:Key="ConnectOnBootCheckbox">ConnectOnBootCheckbox</system:String>
     <system:String x:Key="CancelActionButton">CancelActionButton</system:String>
     <system:String x:Key="QuickLaunchFlag">QuickLaunchFlag</system:String>

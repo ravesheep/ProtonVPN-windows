@@ -32,7 +32,7 @@ namespace ProtonVPN.Settings
         {
             if (DataContext != null)
             { 
-                ((dynamic)DataContext).TorrentAppWebUIAuthPassword = ((PasswordBox)sender).Password;
+                ((dynamic)DataContext).TorrentAppPassword = ((PasswordBox)sender).Password;
             }
         }
     }
