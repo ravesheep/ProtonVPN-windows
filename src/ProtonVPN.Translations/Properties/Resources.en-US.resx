@@ -3197,6 +3197,15 @@ Please follow &lt;Hyperlink Command="{Binding OpenArticleCommand}"&gt;&lt;Run Te
   <data name="Settings_Advanced_lbl_PortForwarding_TorrentApp_CommandLine" xml:space="preserve">
     <value>via Command Line</value>
   </data>
+  <data name="Settings_Advanced_lbl_PortForwarding_TorrentApp_IP" xml:space="preserve">
+    <value>Web UI IP</value>
+  </data>
+  <data name="Settings_Advanced_lbl_PortForwarding_TorrentApp_IP_Info" xml:space="preserve">
+    <value>The IP address of the host which is running qBittorrent, defaults to localhost.</value>
+  </data>
+  <data name="Settings_Advanced_lbl_PortForwarding_TorrentApp_IP_msg_Watermark" xml:space="preserve">
+    <value>IP</value>
+  </data>
   <data name="Settings_Advanced_lbl_PortForwarding_TorrentApp_Port" xml:space="preserve">
     <value>Web UI port</value>
   </data>

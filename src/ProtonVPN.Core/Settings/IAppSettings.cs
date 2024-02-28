@@ -91,6 +91,7 @@ namespace ProtonVPN.Core.Settings
         string PortForwardingCommand_On { get; set; }
         string PortForwardingCommand_Off { get; set; }
         TorrentAppMode TorrentAppMode { get; set; }
+        string TorrentAppIP { get; set; }
         int TorrentAppPort { get; set; }
         bool TorrentAppAuthRequired { get; set; }
         string TorrentAppUsername { get; set; }

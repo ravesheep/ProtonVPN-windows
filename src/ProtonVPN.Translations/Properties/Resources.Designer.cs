@@ -223,15 +223,6 @@ namespace ProtonVPN.Translations.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Account Type:.
-        /// </summary>
-        public static string Account_lbl_AccountType {
-            get {
-                return ResourceManager.GetString("Account_lbl_AccountType", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to All Plus plan features.
         /// </summary>
         public static string Account_lbl_AllPlusFeatures {
@@ -511,7 +502,7 @@ namespace ProtonVPN.Translations.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Logout.
+        ///   Looks up a localized string similar to Sign out.
         /// </summary>
         public static string App_mnu_Logout {
             get {
@@ -547,7 +538,7 @@ namespace ProtonVPN.Translations.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Logging out of the application will disconnect the active VPN connection. Do you want to continue?.
+        ///   Looks up a localized string similar to Signing out of the application will disconnect the active VPN connection. Do you want to continue?.
         /// </summary>
         public static string App_msg_LogoutConnectedConfirm {
             get {
@@ -1034,6 +1025,24 @@ namespace ProtonVPN.Translations.Properties {
         public static string Connecting_VpnStatus_val_Waiting {
             get {
                 return ResourceManager.GetString("Connecting_VpnStatus_val_Waiting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} country.
+        /// </summary>
+        public static string Countries_lbl_One {
+            get {
+                return ResourceManager.GetString("Countries_lbl_One", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} countries.
+        /// </summary>
+        public static string Countries_lbl_Other {
+            get {
+                return ResourceManager.GetString("Countries_lbl_Other", resourceCulture);
             }
         }
         
@@ -3306,7 +3315,7 @@ namespace ProtonVPN.Translations.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Login again.
+        ///   Looks up a localized string similar to Sign in again.
         /// </summary>
         public static string Dialogs_AssignVpnConnections_btn_LoginAgain {
             get {
@@ -3324,7 +3333,7 @@ namespace ProtonVPN.Translations.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to This step will take just a few minutes. After that you will be able to log in and protect all your devices..
+        ///   Looks up a localized string similar to This step will take just a few minutes. After that you will be able to sign in and protect all your devices..
         /// </summary>
         public static string Dialogs_AssignVpnConnections_ttl_Info2 {
             get {
@@ -3333,7 +3342,7 @@ namespace ProtonVPN.Translations.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Thanks for upgrading to Professional/Visionary.
+        ///   Looks up a localized string similar to Thanks for upgrading.
         /// </summary>
         public static string Dialogs_AssignVpnConnections_ttl_Thanks {
             get {
@@ -3397,20 +3406,11 @@ namespace ProtonVPN.Translations.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ok.
+        ///   Looks up a localized string similar to OK.
         /// </summary>
         public static string Dialogs_btn_Ok {
             get {
                 return ResourceManager.GetString("Dialogs_btn_Ok", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Check invoices.
-        /// </summary>
-        public static string Dialogs_Delinquency_btn_Invoices {
-            get {
-                return ResourceManager.GetString("Dialogs_Delinquency_btn_Invoices", resourceCulture);
             }
         }
         
@@ -3420,15 +3420,6 @@ namespace ProtonVPN.Translations.Properties {
         public static string Dialogs_Delinquency_GoToBilling {
             get {
                 return ResourceManager.GetString("Dialogs_Delinquency_GoToBilling", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The account is flagged as delinquent due to unpaid invoices. You can continue to use Proton VPN, but any paid features are now disabled.&lt;LineBreak/&gt;&lt;LineBreak/&gt;&lt;Hyperlink Command=&quot;{Binding ReadAboutDelinquencyCommand}&quot;&gt;Read more about delinquency.&lt;/Hyperlink&gt;.
-        /// </summary>
-        public static string Dialogs_Delinquency_msg {
-            get {
-                return ResourceManager.GetString("Dialogs_Delinquency_msg", resourceCulture);
             }
         }
         
@@ -3456,15 +3447,6 @@ namespace ProtonVPN.Translations.Properties {
         public static string Dialogs_Delinquency_Title {
             get {
                 return ResourceManager.GetString("Dialogs_Delinquency_Title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Delinquent account.
-        /// </summary>
-        public static string Dialogs_Delinquency_ttl {
-            get {
-                return ResourceManager.GetString("Dialogs_Delinquency_ttl", resourceCulture);
             }
         }
         
@@ -3550,7 +3532,7 @@ namespace ProtonVPN.Translations.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to kill switch is protecting your IP by blocking all connections. In case of trouble you can disable kill switch..
+        ///   Looks up a localized string similar to Kill switch is protecting your IP by blocking all connections. In case of trouble you can disable kill switch..
         /// </summary>
         public static string Dialogs_DisconnectError_msg_KillSwitch {
             get {
@@ -3685,7 +3667,7 @@ namespace ProtonVPN.Translations.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to kill switch is blocking all connections to avoid leaking your data. Exiting the application will disable the kill switch..
+        ///   Looks up a localized string similar to Kill switch is blocking all connections to avoid leaking your data. Exiting the application will disable the kill switch..
         /// </summary>
         public static string Dialogs_Exit_msg_KillSwitchOn {
             get {
@@ -3937,11 +3919,20 @@ namespace ProtonVPN.Translations.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Hundreds of servers in 55 countries.
+        ///   Looks up a localized string similar to Hundreds of servers in {0} country.
         /// </summary>
-        public static string Dialogs_SubscriptionExpired_ListOption1 {
+        public static string Dialogs_SubscriptionExpired_ListOption1_One {
             get {
-                return ResourceManager.GetString("Dialogs_SubscriptionExpired_ListOption1", resourceCulture);
+                return ResourceManager.GetString("Dialogs_SubscriptionExpired_ListOption1_One", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hundreds of servers in {0} countries.
+        /// </summary>
+        public static string Dialogs_SubscriptionExpired_ListOption1_Other {
+            get {
+                return ResourceManager.GetString("Dialogs_SubscriptionExpired_ListOption1_Other", resourceCulture);
             }
         }
         
@@ -4162,6 +4153,15 @@ namespace ProtonVPN.Translations.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Proton VPN could not connect because a WireGuard network adapter is already in use. Please disconnect any active VPNs and retry. Alternatively, you can switch protocols in the Advanced Settings..
+        /// </summary>
+        public static string Dialogs_WireGuardAdapterInUse_msg {
+            get {
+                return ResourceManager.GetString("Dialogs_WireGuardAdapterInUse_msg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Close.
         /// </summary>
         public static string ErrorWindow_lbl_Close {
@@ -4225,7 +4225,25 @@ namespace ProtonVPN.Translations.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to kill switch.
+        ///   Looks up a localized string similar to You&apos;ve upgraded your subscription. Enjoy advanced privacy features and next-level performance..
+        /// </summary>
+        public static string FallbackWelcome_Subtitle {
+            get {
+                return ResourceManager.GetString("FallbackWelcome_Subtitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Congratulations.
+        /// </summary>
+        public static string FallbackWelcome_Title {
+            get {
+                return ResourceManager.GetString("FallbackWelcome_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kill switch.
         /// </summary>
         public static string KillSwitch {
             get {
@@ -4252,7 +4270,7 @@ namespace ProtonVPN.Translations.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Login.
+        ///   Looks up a localized string similar to Sign in.
         /// </summary>
         public static string Login_btn_Login {
             get {
@@ -4261,7 +4279,16 @@ namespace ProtonVPN.Translations.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Your session has expired. Please re-log in..
+        ///   Looks up a localized string similar to Incorrect login credentials. Please try again..
+        /// </summary>
+        public static string Login_Error_msg_InvalidCredentials {
+            get {
+                return ResourceManager.GetString("Login_Error_msg_InvalidCredentials", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your session has expired. Please sign in again..
         /// </summary>
         public static string Login_Error_msg_SessionExpired {
             get {
@@ -4270,11 +4297,38 @@ namespace ProtonVPN.Translations.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Invalid refresh token, please log in again..
+        ///   Looks up a localized string similar to Unable to authenticate. Please try again..
+        /// </summary>
+        public static string Login_Error_msg_SsoAuthError {
+            get {
+                return ResourceManager.GetString("Login_Error_msg_SsoAuthError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unable to redirect to the SSO login page. Please try again..
+        /// </summary>
+        public static string Login_Error_msg_SsoRedirectionError {
+            get {
+                return ResourceManager.GetString("Login_Error_msg_SsoRedirectionError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid refresh token, please sign in again..
         /// </summary>
         public static string Login_Error_msg_Unauthorized {
             get {
                 return ResourceManager.GetString("Login_Error_msg_Unauthorized", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unauthenticated session not available..
+        /// </summary>
+        public static string Login_Error_msg_UnauthSessionError {
+            get {
+                return ResourceManager.GetString("Login_Error_msg_UnauthSessionError", resourceCulture);
             }
         }
         
@@ -4288,7 +4342,7 @@ namespace ProtonVPN.Translations.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to kill switch is currently active.
+        ///   Looks up a localized string similar to Kill switch is currently active.
         /// </summary>
         public static string Login_lbl_KillSwitch {
             get {
@@ -4306,7 +4360,7 @@ namespace ProtonVPN.Translations.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Secure internet Anywhere.
+        ///   Looks up a localized string similar to Secure internet anywhere.
         /// </summary>
         public static string Login_lbl_SecureInternetAnywhere {
             get {
@@ -4428,6 +4482,24 @@ namespace ProtonVPN.Translations.Properties {
         public static string Login_lnk_ResetPassword {
             get {
                 return ResourceManager.GetString("Login_lnk_ResetPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sign in with SSO.
+        /// </summary>
+        public static string Login_lnk_SwitchToSingleSignOn {
+            get {
+                return ResourceManager.GetString("Login_lnk_SwitchToSingleSignOn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sign in with a password.
+        /// </summary>
+        public static string Login_lnk_SwitchToUsernameAndPassword {
+            get {
+                return ResourceManager.GetString("Login_lnk_SwitchToUsernameAndPassword", resourceCulture);
             }
         }
         
@@ -4558,6 +4630,15 @@ namespace ProtonVPN.Translations.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Upgrade to Plus.
+        /// </summary>
+        public static string Map_UpgradeTooltip {
+            get {
+                return ResourceManager.GetString("Map_UpgradeTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to CONNECTED.
         /// </summary>
         public static string Map_VpnStatus_val_Connected {
@@ -4572,6 +4653,24 @@ namespace ProtonVPN.Translations.Properties {
         public static string Map_VpnStatus_val_Disconnected {
             get {
                 return ResourceManager.GetString("Map_VpnStatus_val_Disconnected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Get unlimited changes with VPN Plus.
+        /// </summary>
+        public static string Modal_ChangeServer_Subtitle {
+            get {
+                return ResourceManager.GetString("Modal_ChangeServer_Subtitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You’ve reached the maximum number of Free server changes for now..
+        /// </summary>
+        public static string Modal_ChangeServer_Title {
+            get {
+                return ResourceManager.GetString("Modal_ChangeServer_Title", resourceCulture);
             }
         }
         
@@ -4594,7 +4693,7 @@ namespace ProtonVPN.Translations.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Learn More.
+        ///   Looks up a localized string similar to Learn more.
         /// </summary>
         public static string Modal_DiscourageSecureCore_LearnMore {
             get {
@@ -4617,6 +4716,60 @@ namespace ProtonVPN.Translations.Properties {
         public static string Modal_DiscourageSecureCore_Title {
             get {
                 return ResourceManager.GetString("Modal_DiscourageSecureCore_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Got it.
+        /// </summary>
+        public static string Modals_Rescope_btn_GotIt {
+            get {
+                return ResourceManager.GetString("Modals_Rescope_btn_GotIt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New Free countries.
+        /// </summary>
+        public static string Modals_Rescope_NewFreeCountries {
+            get {
+                return ResourceManager.GetString("Modals_Rescope_NewFreeCountries", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to There are now Free servers in Poland and Romania..
+        /// </summary>
+        public static string Modals_Rescope_NewFreeCountriesDescription {
+            get {
+                return ResourceManager.GetString("Modals_Rescope_NewFreeCountriesDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Changes to server selection.
+        /// </summary>
+        public static string Modals_Rescope_ServerSelection {
+            get {
+                return ResourceManager.GetString("Modals_Rescope_ServerSelection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To prevent server crowding and ensure that everyone has access to fast and secure browsing, we removed manual country selection and made major improvements to automatic server selection..
+        /// </summary>
+        public static string Modals_Rescope_ServerSelectionDescription {
+            get {
+                return ResourceManager.GetString("Modals_Rescope_ServerSelectionDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to What’s new.
+        /// </summary>
+        public static string Modals_Rescope_Title {
+            get {
+                return ResourceManager.GetString("Modals_Rescope_Title", resourceCulture);
             }
         }
         
@@ -4747,6 +4900,15 @@ namespace ProtonVPN.Translations.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Restart.
+        /// </summary>
+        public static string Notifications_Update_lnk_Restart {
+            get {
+                return ResourceManager.GetString("Notifications_Update_lnk_Restart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to What&apos;s new.
         /// </summary>
         public static string Notifications_Update_lnk_WhatsNew {
@@ -4869,6 +5031,69 @@ namespace ProtonVPN.Translations.Properties {
         public static string Onboarding_ttl_Step_4 {
             get {
                 return ResourceManager.GetString("Onboarding_ttl_Step_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Get started.
+        /// </summary>
+        public static string PaidWelcome_btn_GetStarted {
+            get {
+                return ResourceManager.GetString("PaidWelcome_btn_GetStarted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1800+ new servers in {0} country.
+        /// </summary>
+        public static string PlusWelcome_Bullet1_One {
+            get {
+                return ResourceManager.GetString("PlusWelcome_Bullet1_One", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1800+ new servers in {0} countries.
+        /// </summary>
+        public static string PlusWelcome_Bullet1_Other {
+            get {
+                return ResourceManager.GetString("PlusWelcome_Bullet1_Other", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Advanced security features.
+        /// </summary>
+        public static string PlusWelcome_Bullet2 {
+            get {
+                return ResourceManager.GetString("PlusWelcome_Bullet2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Up to 10 devices at once.
+        /// </summary>
+        public static string PlusWelcome_Bullet3 {
+            get {
+                return ResourceManager.GetString("PlusWelcome_Bullet3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enjoy extra privacy features, supercharged performance, and next-level VPN customization..
+        /// </summary>
+        public static string PlusWelcome_Subtitle {
+            get {
+                return ResourceManager.GetString("PlusWelcome_Subtitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Welcome to VPN Plus.
+        /// </summary>
+        public static string PlusWelcome_Title {
+            get {
+                return ResourceManager.GetString("PlusWelcome_Title", resourceCulture);
             }
         }
         
@@ -5089,6 +5314,15 @@ namespace ProtonVPN.Translations.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please select a gateway.
+        /// </summary>
+        public static string Profiles_Profile_Error_msg_GatewayEmpty {
+            get {
+                return ResourceManager.GetString("Profiles_Profile_Error_msg_GatewayEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Please select a profile name.
         /// </summary>
         public static string Profiles_Profile_Error_msg_NameEmpty {
@@ -5143,6 +5377,15 @@ namespace ProtonVPN.Translations.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Select Gateway.
+        /// </summary>
+        public static string Profiles_Profile_Gateway_Watermark {
+            get {
+                return ResourceManager.GetString("Profiles_Profile_Gateway_Watermark", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Color:.
         /// </summary>
         public static string Profiles_Profile_lbl_Color {
@@ -5175,6 +5418,15 @@ namespace ProtonVPN.Translations.Properties {
         public static string Profiles_Profile_lbl_ExitCountry {
             get {
                 return ResourceManager.GetString("Profiles_Profile_lbl_ExitCountry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Gateway:.
+        /// </summary>
+        public static string Profiles_Profile_lbl_Gateway {
+            get {
+                return ResourceManager.GetString("Profiles_Profile_lbl_Gateway", resourceCulture);
             }
         }
         
@@ -5359,7 +5611,7 @@ namespace ProtonVPN.Translations.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to kill switch Off.
+        ///   Looks up a localized string similar to Kill switch Off.
         /// </summary>
         public static string QuickSettings_btn_KillSwitchOff {
             get {
@@ -5368,7 +5620,7 @@ namespace ProtonVPN.Translations.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to kill switch On.
+        ///   Looks up a localized string similar to Kill switch On.
         /// </summary>
         public static string QuickSettings_btn_KillSwitchOn {
             get {
@@ -5485,6 +5737,78 @@ namespace ProtonVPN.Translations.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ad blocked.
+        /// </summary>
+        public static string QuickSettings_lbl_NetShieldStatsAds_One {
+            get {
+                return ResourceManager.GetString("QuickSettings_lbl_NetShieldStatsAds_One", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ads blocked.
+        /// </summary>
+        public static string QuickSettings_lbl_NetShieldStatsAds_Other {
+            get {
+                return ResourceManager.GetString("QuickSettings_lbl_NetShieldStatsAds_Other", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Advertisement websites use cookies and trackers to target you..
+        /// </summary>
+        public static string QuickSettings_lbl_NetShieldStatsAdsTooltip {
+            get {
+                return ResourceManager.GetString("QuickSettings_lbl_NetShieldStatsAdsTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Data saved.
+        /// </summary>
+        public static string QuickSettings_lbl_NetShieldStatsDataSaved {
+            get {
+                return ResourceManager.GetString("QuickSettings_lbl_NetShieldStatsDataSaved", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Estimated size of ads, trackers, and malware that NetShield has blocked..
+        /// </summary>
+        public static string QuickSettings_lbl_NetShieldStatsDataSavedTooltip {
+            get {
+                return ResourceManager.GetString("QuickSettings_lbl_NetShieldStatsDataSavedTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tracker stopped.
+        /// </summary>
+        public static string QuickSettings_lbl_NetShieldStatsTrackers_One {
+            get {
+                return ResourceManager.GetString("QuickSettings_lbl_NetShieldStatsTrackers_One", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Trackers stopped.
+        /// </summary>
+        public static string QuickSettings_lbl_NetShieldStatsTrackers_Other {
+            get {
+                return ResourceManager.GetString("QuickSettings_lbl_NetShieldStatsTrackers_Other", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Trackers are third-party websites that collect, store, and sell information about your web activity..
+        /// </summary>
+        public static string QuickSettings_lbl_NetShieldStatsTrackersTooltip {
+            get {
+                return ResourceManager.GetString("QuickSettings_lbl_NetShieldStatsTrackersTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to If websites don&apos;t load, try disabling NetShield.
         /// </summary>
         public static string QuickSettings_lbl_NetShieldWarning {
@@ -5517,6 +5841,24 @@ namespace ProtonVPN.Translations.Properties {
         public static string QuickSettings_lbl_SecureCoreWarning {
             get {
                 return ResourceManager.GetString("QuickSettings_lbl_SecureCoreWarning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} secure server.
+        /// </summary>
+        public static string Secure_Servers_lbl_One {
+            get {
+                return ResourceManager.GetString("Secure_Servers_lbl_One", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} secure servers.
+        /// </summary>
+        public static string Secure_Servers_lbl_Other {
+            get {
+                return ResourceManager.GetString("Secure_Servers_lbl_Other", resourceCulture);
             }
         }
         
@@ -5557,6 +5899,15 @@ namespace ProtonVPN.Translations.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Fastest.
+        /// </summary>
+        public static string Servers_Fastest {
+            get {
+                return ResourceManager.GetString("Servers_Fastest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to P2P Server.
         /// </summary>
         public static string Servers_Feature_val_P2P {
@@ -5566,7 +5917,7 @@ namespace ProtonVPN.Translations.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to PLUS Server.
+        ///   Looks up a localized string similar to Plus server.
         /// </summary>
         public static string Servers_Feature_val_Plus {
             get {
@@ -5602,11 +5953,20 @@ namespace ProtonVPN.Translations.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Upgrade.
+        ///   Looks up a localized string similar to Free connections (1).
         /// </summary>
-        public static string Servers_lbl_Upgrade {
+        public static string Servers_FreeConnections {
             get {
-                return ResourceManager.GetString("Servers_lbl_Upgrade", resourceCulture);
+                return ResourceManager.GetString("Servers_FreeConnections", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Upgrade to Plus.
+        /// </summary>
+        public static string Servers_lbl_UpgradeToPlus {
+            get {
+                return ResourceManager.GetString("Servers_lbl_UpgradeToPlus", resourceCulture);
             }
         }
         
@@ -5719,11 +6079,38 @@ namespace ProtonVPN.Translations.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Unfortunatelly, this server does not support WireGuard..
+        ///   Looks up a localized string similar to Unfortunately, this server does not support WireGuard..
         /// </summary>
         public static string Servers_msg_MissingServerPublicKey {
             get {
                 return ResourceManager.GetString("Servers_msg_MissingServerPublicKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Get worldwide coverage with VPN Plus.
+        /// </summary>
+        public static string Servers_UpsellBanner {
+            get {
+                return ResourceManager.GetString("Servers_UpsellBanner", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Not the country you wanted? Upgrade to choose any server.
+        /// </summary>
+        public static string Servers_UpsellBanner_NotTheCountryYouWanted {
+            get {
+                return ResourceManager.GetString("Servers_UpsellBanner_NotTheCountryYouWanted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Gateways.
+        /// </summary>
+        public static string ServerType_val_B2B {
+            get {
+                return ResourceManager.GetString("ServerType_val_B2B", resourceCulture);
             }
         }
         
@@ -6016,11 +6403,38 @@ namespace ProtonVPN.Translations.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Speed up your torrenting and online gaming by allowing supported local apps to be reachable from the internet..
+        /// </summary>
+        public static string Settings_Advanced_lbl_PortForwarding_Tooltip {
+            get {
+                return ResourceManager.GetString("Settings_Advanced_lbl_PortForwarding_Tooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Port updating method.
         /// </summary>
         public static string Settings_Advanced_lbl_PortForwarding_TorrentApp {
             get {
                 return ResourceManager.GetString("Settings_Advanced_lbl_PortForwarding_TorrentApp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Requires authentication.
+        /// </summary>
+        public static string Settings_Advanced_lbl_PortForwarding_TorrentApp_AuthRequired {
+            get {
+                return ResourceManager.GetString("Settings_Advanced_lbl_PortForwarding_TorrentApp_AuthRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Is a login required to use qBittorrent&apos;s Web UI? Authentication can often be disabled locally..
+        /// </summary>
+        public static string Settings_Advanced_lbl_PortForwarding_TorrentApp_AuthRequired_Info {
+            get {
+                return ResourceManager.GetString("Settings_Advanced_lbl_PortForwarding_TorrentApp_AuthRequired_Info", resourceCulture);
             }
         }
         
@@ -6043,11 +6457,29 @@ namespace ProtonVPN.Translations.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to via Web UI.
+        ///   Looks up a localized string similar to Web UI IP.
         /// </summary>
-        public static string Settings_Advanced_lbl_PortForwarding_TorrentApp_WebUI {
+        public static string Settings_Advanced_lbl_PortForwarding_TorrentApp_IP {
             get {
-                return ResourceManager.GetString("Settings_Advanced_lbl_PortForwarding_TorrentApp_WebUI", resourceCulture);
+                return ResourceManager.GetString("Settings_Advanced_lbl_PortForwarding_TorrentApp_IP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The IP address of the host which is running qBittorrent, defaults to localhost..
+        /// </summary>
+        public static string Settings_Advanced_lbl_PortForwarding_TorrentApp_IP_Info {
+            get {
+                return ResourceManager.GetString("Settings_Advanced_lbl_PortForwarding_TorrentApp_IP_Info", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to IP.
+        /// </summary>
+        public static string Settings_Advanced_lbl_PortForwarding_TorrentApp_IP_msg_Watermark {
+            get {
+                return ResourceManager.GetString("Settings_Advanced_lbl_PortForwarding_TorrentApp_IP_msg_Watermark", resourceCulture);
             }
         }
         
@@ -6074,54 +6506,7 @@ namespace ProtonVPN.Translations.Properties {
         /// </summary>
         public static string Settings_Advanced_lbl_PortForwarding_TorrentApp_Password_msg_Watermark {
             get {
-                return ResourceManager.GetString("Settings_Advanced_lbl_PortForwarding_TorrentApp_Password_msg_Watermark" +
-                        "", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Username.
-        /// </summary>
-        public static string Settings_Advanced_lbl_PortForwarding_TorrentApp_Username {
-            get {
-                return ResourceManager.GetString("Settings_Advanced_lbl_PortForwarding_TorrentApp_Username", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The username required by qBittorrent..
-        /// </summary>
-        public static string Settings_Advanced_lbl_PortForwarding_TorrentApp_Username_Info {
-            get {
-                return ResourceManager.GetString("Settings_Advanced_lbl_PortForwarding_TorrentApp_Username_Info", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Username.
-        /// </summary>
-        public static string Settings_Advanced_lbl_PortForwarding_TorrentApp_Username_msg_Watermark {
-            get {
-                return ResourceManager.GetString("Settings_Advanced_lbl_PortForwarding_TorrentApp_Username_msg_Watermark" +
-                        "", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Requires authentication.
-        /// </summary>
-        public static string Settings_Advanced_lbl_PortForwarding_TorrentApp_AuthRequired {
-            get {
-                return ResourceManager.GetString("Settings_Advanced_lbl_PortForwarding_TorrentApp_AuthRequired", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Is a login required to use qBittorrent&apos;s Web UI? Authentication can often be disabled locally..
-        /// </summary>
-        public static string Settings_Advanced_lbl_PortForwarding_TorrentApp_AuthRequired_Info {
-            get {
-                return ResourceManager.GetString("Settings_Advanced_lbl_PortForwarding_TorrentApp_AuthRequired_Info", resourceCulture);
+                return ResourceManager.GetString("Settings_Advanced_lbl_PortForwarding_TorrentApp_Password_msg_Watermark", resourceCulture);
             }
         }
         
@@ -6149,6 +6534,42 @@ namespace ProtonVPN.Translations.Properties {
         public static string Settings_Advanced_lbl_PortForwarding_TorrentApp_Port_msg_Watermark {
             get {
                 return ResourceManager.GetString("Settings_Advanced_lbl_PortForwarding_TorrentApp_Port_msg_Watermark", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Username.
+        /// </summary>
+        public static string Settings_Advanced_lbl_PortForwarding_TorrentApp_Username {
+            get {
+                return ResourceManager.GetString("Settings_Advanced_lbl_PortForwarding_TorrentApp_Username", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The username required by qBittorrent..
+        /// </summary>
+        public static string Settings_Advanced_lbl_PortForwarding_TorrentApp_Username_Info {
+            get {
+                return ResourceManager.GetString("Settings_Advanced_lbl_PortForwarding_TorrentApp_Username_Info", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Username.
+        /// </summary>
+        public static string Settings_Advanced_lbl_PortForwarding_TorrentApp_Username_msg_Watermark {
+            get {
+                return ResourceManager.GetString("Settings_Advanced_lbl_PortForwarding_TorrentApp_Username_msg_Watermark", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to via Web UI.
+        /// </summary>
+        public static string Settings_Advanced_lbl_PortForwarding_TorrentApp_WebUI {
+            get {
+                return ResourceManager.GetString("Settings_Advanced_lbl_PortForwarding_TorrentApp_WebUI", resourceCulture);
             }
         }
         
@@ -6293,6 +6714,15 @@ namespace ProtonVPN.Translations.Properties {
         public static string Settings_Advanced_ttl {
             get {
                 return ResourceManager.GetString("Settings_Advanced_ttl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Upgrade to Plus.
+        /// </summary>
+        public static string Settings_btn_UpgradeToPlus {
+            get {
+                return ResourceManager.GetString("Settings_btn_UpgradeToPlus", resourceCulture);
             }
         }
         
@@ -6486,6 +6916,24 @@ namespace ProtonVPN.Translations.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Automatic updates.
+        /// </summary>
+        public static string Settings_General_lbl_AutoUpdate {
+            get {
+                return ResourceManager.GetString("Settings_General_lbl_AutoUpdate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Automatically check for and install updates to Proton VPN..
+        /// </summary>
+        public static string Settings_General_lbl_AutoUpdate_Info {
+            get {
+                return ResourceManager.GetString("Settings_General_lbl_AutoUpdate_Info", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Connect on app start.
         /// </summary>
         public static string Settings_General_lbl_ConnectOnAppStart {
@@ -6594,6 +7042,42 @@ namespace ProtonVPN.Translations.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {0} {1} left.
+        /// </summary>
+        public static string Sidebar_AnnouncementBanner_lbl_Countdown {
+            get {
+                return ResourceManager.GetString("Sidebar_AnnouncementBanner_lbl_Countdown", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A VPN gateway is a secure connection that provides controlled access to your company&apos;s data and services through dedicated servers..
+        /// </summary>
+        public static string Sidebar_B2BPopup_Desc {
+            get {
+                return ResourceManager.GetString("Sidebar_B2BPopup_Desc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to What&apos;s a gateway?.
+        /// </summary>
+        public static string Sidebar_B2BPopup_Title {
+            get {
+                return ResourceManager.GetString("Sidebar_B2BPopup_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Change server.
+        /// </summary>
+        public static string Sidebar_Connection_btn_ChangeServer {
+            get {
+                return ResourceManager.GetString("Sidebar_Connection_btn_ChangeServer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Quick Connect.
         /// </summary>
         public static string Sidebar_Connection_btn_Connect {
@@ -6648,7 +7132,7 @@ namespace ProtonVPN.Translations.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to kill switch activated!.
+        ///   Looks up a localized string similar to Kill switch activated!.
         /// </summary>
         public static string Sidebar_Connection_lbl_KillSwitch {
             get {
@@ -6657,7 +7141,7 @@ namespace ProtonVPN.Translations.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to kill switch is blocking all connections to avoid leaking your data..
+        ///   Looks up a localized string similar to Kill switch is blocking all connections to avoid leaking your data..
         /// </summary>
         public static string Sidebar_Connection_lbl_KillSwitch_Info {
             get {
@@ -6666,7 +7150,7 @@ namespace ProtonVPN.Translations.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Locations ({0}).
+        ///   Looks up a localized string similar to Plus locations ({0}).
         /// </summary>
         public static string Sidebar_Countries_AllLocationCount {
             get {
@@ -6792,15 +7276,6 @@ namespace ProtonVPN.Translations.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Our partners.
-        /// </summary>
-        public static string Sidebar_Countries_OurPartners {
-            get {
-                return ResourceManager.GetString("Sidebar_Countries_OurPartners", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to PLUS Locations ({0}).
         /// </summary>
         public static string Sidebar_Countries_PlusLocationCount {
@@ -6828,7 +7303,7 @@ namespace ProtonVPN.Translations.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to PLUS Servers ({0}).
+        ///   Looks up a localized string similar to Plus servers ({0}).
         /// </summary>
         public static string Sidebar_Countries_ServerCountByTier2 {
             get {
@@ -6990,7 +7465,7 @@ namespace ProtonVPN.Translations.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to OTHERS.
+        ///   Looks up a localized string similar to Others.
         /// </summary>
         public static string Sidebar_Separator_Others {
             get {
@@ -7161,6 +7636,24 @@ namespace ProtonVPN.Translations.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to second.
+        /// </summary>
+        public static string TimeUnit_val_Second_One {
+            get {
+                return ResourceManager.GetString("TimeUnit_val_Second_One", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to seconds.
+        /// </summary>
+        public static string TimeUnit_val_Second_Other {
+            get {
+                return ResourceManager.GetString("TimeUnit_val_Second_Other", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Notification Settings.
         /// </summary>
         public static string Tooltips_SmartReconnection_btn_NotificationSettings {
@@ -7188,6 +7681,60 @@ namespace ProtonVPN.Translations.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Congratulations! You unlocked premium security and performance features on all Proton services, plus &lt;Bold&gt;500 GB&lt;/Bold&gt; total storage.&lt;LineBreak/&gt;&lt;LineBreak/&gt;Enjoy the best of Proton privacy. .
+        /// </summary>
+        public static string UnlimitedWelcome_Subtitle {
+            get {
+                return ResourceManager.GetString("UnlimitedWelcome_Subtitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Welcome to Proton Unlimited.
+        /// </summary>
+        public static string UnlimitedWelcome_Title {
+            get {
+                return ResourceManager.GetString("UnlimitedWelcome_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Access faster, less crowded servers..
+        /// </summary>
+        public static string Upsell_Accelerator_Bullet1 {
+            get {
+                return ResourceManager.GetString("Upsell_Accelerator_Bullet1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Increase connection speeds by up to 400% with &lt;Bold&gt;VPN Accelerator&lt;/Bold&gt;..
+        /// </summary>
+        public static string Upsell_Accelerator_Bullet2 {
+            get {
+                return ResourceManager.GetString("Upsell_Accelerator_Bullet2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Improved speed and stability when connected to distant servers..
+        /// </summary>
+        public static string Upsell_Accelerator_Bullet3 {
+            get {
+                return ResourceManager.GetString("Upsell_Accelerator_Bullet3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Browse at even higher speeds (up to 10 Gbps).
+        /// </summary>
+        public static string Upsell_Accelerator_Title {
+            get {
+                return ResourceManager.GetString("Upsell_Accelerator_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Upgrade.
         /// </summary>
         public static string Upsell_btn_Upgrade {
@@ -7197,47 +7744,38 @@ namespace ProtonVPN.Translations.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Block ads and malware with NetShield.
+        ///   Looks up a localized string similar to Access geoblocked content.
         /// </summary>
-        public static string Upsell_Countries_BlockAds {
+        public static string Upsell_Countries_AccessGeoblockedContent {
             get {
-                return ResourceManager.GetString("Upsell_Countries_BlockAds", resourceCulture);
+                return ResourceManager.GetString("Upsell_Countries_AccessGeoblockedContent", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Browse at the highest speeds (10 Gbps).
+        ///   Looks up a localized string similar to Choose any location.
         /// </summary>
-        public static string Upsell_Countries_BrowseFast {
+        public static string Upsell_Countries_ChooseAnyLocation {
             get {
-                return ResourceManager.GetString("Upsell_Countries_BrowseFast", resourceCulture);
+                return ResourceManager.GetString("Upsell_Countries_ChooseAnyLocation", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Access global streaming services.
+        ///   Looks up a localized string similar to Even higher VPN speed.
         /// </summary>
-        public static string Upsell_Countries_GlobalStreamingServices {
+        public static string Upsell_Countries_HigherVpnSpeed {
             get {
-                return ResourceManager.GetString("Upsell_Countries_GlobalStreamingServices", resourceCulture);
+                return ResourceManager.GetString("Upsell_Countries_HigherVpnSpeed", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to And many more premium features.
+        ///   Looks up a localized string similar to Stream your favorite movies.
         /// </summary>
-        public static string Upsell_Countries_MoreFeatures {
+        public static string Upsell_Countries_StreamMovies {
             get {
-                return ResourceManager.GetString("Upsell_Countries_MoreFeatures", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Connect up to 10 devices at once.
-        /// </summary>
-        public static string Upsell_Countries_SimultaneousDevices {
-            get {
-                return ResourceManager.GetString("Upsell_Countries_SimultaneousDevices", resourceCulture);
+                return ResourceManager.GetString("Upsell_Countries_StreamMovies", resourceCulture);
             }
         }
         
@@ -7251,7 +7789,7 @@ namespace ProtonVPN.Translations.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Access over 1200 secure servers in 63 countries.
+        ///   Looks up a localized string similar to Access over {0} in {1}.
         /// </summary>
         public static string Upsell_Countries_Title {
             get {
@@ -7260,16 +7798,160 @@ namespace ProtonVPN.Translations.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to What is Moderate NAT?.
+        ///   Looks up a localized string similar to Connect to {0} country.
         /// </summary>
-        public static string Upsell_ModerateNat_About {
+        public static string Upsell_Country_Bullet1_One {
             get {
-                return ResourceManager.GetString("Upsell_ModerateNat_About", resourceCulture);
+                return ResourceManager.GetString("Upsell_Country_Bullet1_One", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Moderate NAT, also known as Nat Type 2, can improve your online experience with various applications and online video games..
+        ///   Looks up a localized string similar to Connect to {0} countries.
+        /// </summary>
+        public static string Upsell_Country_Bullet1_Other {
+            get {
+                return ResourceManager.GetString("Upsell_Country_Bullet1_Other", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Higher speeds (10 Gbps).
+        /// </summary>
+        public static string Upsell_Country_Bullet2 {
+            get {
+                return ResourceManager.GetString("Upsell_Country_Bullet2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stream your favorite movies.
+        /// </summary>
+        public static string Upsell_Country_Bullet3 {
+            get {
+                return ResourceManager.GetString("Upsell_Country_Bullet3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Protect up to 10 devices.
+        /// </summary>
+        public static string Upsell_Country_Bullet4 {
+            get {
+                return ResourceManager.GetString("Upsell_Country_Bullet4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 30-day money back guarantee.
+        /// </summary>
+        public static string Upsell_Country_Bullet5 {
+            get {
+                return ResourceManager.GetString("Upsell_Country_Bullet5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unlock &lt;Bold&gt;country selection&lt;/Bold&gt; with VPN Plus.
+        /// </summary>
+        public static string Upsell_Country_Subtitle {
+            get {
+                return ResourceManager.GetString("Upsell_Country_Subtitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Want to choose a specific country?.
+        /// </summary>
+        public static string Upsell_Country_Title {
+            get {
+                return ResourceManager.GetString("Upsell_Country_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Connect to VPN with your &lt;Bold&gt;custom domain name system (DNS)&lt;/Bold&gt;.
+        /// </summary>
+        public static string Upsell_CustomDns_Bullet1 {
+            get {
+                return ResourceManager.GetString("Upsell_CustomDns_Bullet1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save frequently used connections with &lt;Bold&gt;profiles&lt;/Bold&gt;.
+        /// </summary>
+        public static string Upsell_CustomDns_Bullet2 {
+            get {
+                return ResourceManager.GetString("Upsell_CustomDns_Bullet2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Get faster access to your profiles with &lt;Bold&gt;Quick Connect&lt;/Bold&gt;.
+        /// </summary>
+        public static string Upsell_CustomDns_Bullet3 {
+            get {
+                return ResourceManager.GetString("Upsell_CustomDns_Bullet3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unlock advanced VPN customization.
+        /// </summary>
+        public static string Upsell_CustomDns_Title {
+            get {
+                return ResourceManager.GetString("Upsell_CustomDns_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Free server locations ({0}).
+        /// </summary>
+        public static string Upsell_FreeConnections_Locations {
+            get {
+                return ResourceManager.GetString("Upsell_FreeConnections_Locations", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Proton Free automatically connects you to the fastest available server. This will normally be the closest server to your location..
+        /// </summary>
+        public static string Upsell_FreeConnections_Subtitle {
+            get {
+                return ResourceManager.GetString("Upsell_FreeConnections_Subtitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Free connections.
+        /// </summary>
+        public static string Upsell_FreeConnections_Title {
+            get {
+                return ResourceManager.GetString("Upsell_FreeConnections_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Improve online gaming and video call performance.
+        /// </summary>
+        public static string Upsell_ModerateNat_Bullet1 {
+            get {
+                return ResourceManager.GetString("Upsell_ModerateNat_Bullet1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to NAT type 2 (moderate) optimizes speed and stability by enabling direct connections between devices.
+        /// </summary>
+        public static string Upsell_ModerateNat_Bullet2 {
+            get {
+                return ResourceManager.GetString("Upsell_ModerateNat_Bullet2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unlock &lt;Bold&gt;NAT type 2&lt;/Bold&gt; with VPN Plus.
         /// </summary>
         public static string Upsell_ModerateNat_Subtitle {
             get {
@@ -7278,20 +7960,11 @@ namespace ProtonVPN.Translations.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enable Moderate NAT.
+        ///   Looks up a localized string similar to Level up your gaming experience.
         /// </summary>
         public static string Upsell_ModerateNat_Title {
             get {
                 return ResourceManager.GetString("Upsell_ModerateNat_Title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Upgrade to a paid plan to unlock this and many other features..
-        /// </summary>
-        public static string Upsell_ModerateNat_Unlock {
-            get {
-                return ResourceManager.GetString("Upsell_ModerateNat_Unlock", resourceCulture);
             }
         }
         
@@ -7377,16 +8050,43 @@ namespace ProtonVPN.Translations.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to What is Port Forwarding?.
+        ///   Looks up a localized string similar to Available with VPN Business..
         /// </summary>
-        public static string Upsell_PortForwarding_About {
+        public static string Upsell_Plan_Business_Info {
             get {
-                return ResourceManager.GetString("Upsell_PortForwarding_About", resourceCulture);
+                return ResourceManager.GetString("Upsell_Plan_Business_Info", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Get faster P2P downloads and enhance your online gaming experience with Port Forwarding. &lt;LineBreak/&gt;&lt;LineBreak/&gt;Unlock this feature and many more with VPN Plus..
+        ///   Looks up a localized string similar to Improve your peer-to-peer download speeds.
+        /// </summary>
+        public static string Upsell_PortForwarding_Bullet1 {
+            get {
+                return ResourceManager.GetString("Upsell_PortForwarding_Bullet1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Connect to online gaming servers and host multiplayer games.
+        /// </summary>
+        public static string Upsell_PortForwarding_Bullet2 {
+            get {
+                return ResourceManager.GetString("Upsell_PortForwarding_Bullet2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Set up remote access to devices on your local network.
+        /// </summary>
+        public static string Upsell_PortForwarding_Bullet3 {
+            get {
+                return ResourceManager.GetString("Upsell_PortForwarding_Bullet3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unlock &lt;Bold&gt;port forwarding&lt;/Bold&gt; with VPN Plus.
         /// </summary>
         public static string Upsell_PortForwarding_Subtitle {
             get {
@@ -7395,11 +8095,56 @@ namespace ProtonVPN.Translations.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enable Port Forwarding.
+        ///   Looks up a localized string similar to Supercharge your P2P connections.
         /// </summary>
         public static string Upsell_PortForwarding_Title {
             get {
                 return ResourceManager.GetString("Upsell_PortForwarding_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save your preferred server, city, or country..
+        /// </summary>
+        public static string Upsell_Profiles_Bullet1 {
+            get {
+                return ResourceManager.GetString("Upsell_Profiles_Bullet1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Set custom protocols and premium VPN features..
+        /// </summary>
+        public static string Upsell_Profiles_Bullet2 {
+            get {
+                return ResourceManager.GetString("Upsell_Profiles_Bullet2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Set up auto-connect for even faster access..
+        /// </summary>
+        public static string Upsell_Profiles_Bullet3 {
+            get {
+                return ResourceManager.GetString("Upsell_Profiles_Bullet3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unlock &lt;Bold&gt;profiles&lt;/Bold&gt; with VPN Plus.
+        /// </summary>
+        public static string Upsell_Profiles_Subtitle {
+            get {
+                return ResourceManager.GetString("Upsell_Profiles_Subtitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Get quick access to your frequent connections.
+        /// </summary>
+        public static string Upsell_Profiles_Title {
+            get {
+                return ResourceManager.GetString("Upsell_Profiles_Title", resourceCulture);
             }
         }
         
@@ -7445,6 +8190,51 @@ namespace ProtonVPN.Translations.Properties {
         public static string Upsell_SecureCore_Title {
             get {
                 return ResourceManager.GetString("Upsell_SecureCore_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Split your traffic into VPN and non-VPN tunnels.
+        /// </summary>
+        public static string Upsell_SplitTunneling_Bullet1 {
+            get {
+                return ResourceManager.GetString("Upsell_SplitTunneling_Bullet1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Let trusted apps and IP addresses bypass VPN for faster speeds.
+        /// </summary>
+        public static string Upsell_SplitTunneling_Bullet2 {
+            get {
+                return ResourceManager.GetString("Upsell_SplitTunneling_Bullet2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Access both home and local content when browsing from abroad.
+        /// </summary>
+        public static string Upsell_SplitTunneling_Bullet3 {
+            get {
+                return ResourceManager.GetString("Upsell_SplitTunneling_Bullet3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unlock &lt;Bold&gt;split tunneling&lt;/Bold&gt; with VPN Plus.
+        /// </summary>
+        public static string Upsell_SplitTunneling_Subtitle {
+            get {
+                return ResourceManager.GetString("Upsell_SplitTunneling_Subtitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Get the best of both worlds.
+        /// </summary>
+        public static string Upsell_SplitTunneling_Title {
+            get {
+                return ResourceManager.GetString("Upsell_SplitTunneling_Title", resourceCulture);
             }
         }
         

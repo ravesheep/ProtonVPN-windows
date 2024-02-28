@@ -453,6 +453,12 @@ namespace ProtonVPN.Core
             set => Set(value);
         }
 
+        public string TorrentAppIP
+        {
+            get => Get<string>();
+            set => Set(value);
+        }
+
         public int TorrentAppPort
         {
             get => Get<int>();

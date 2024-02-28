@@ -401,6 +401,9 @@
     <Setting Name="TorrentAppMode" Type="System.String" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
+    <Setting Name="TorrentAppIP" Type="System.String" Scope="User">
+      <Value Profile="(Default)">localhost</Value>
+    </Setting>
     <Setting Name="TorrentAppPort" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">8080</Value>
     </Setting>

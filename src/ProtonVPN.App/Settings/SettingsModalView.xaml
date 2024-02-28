@@ -667,6 +667,29 @@ along with ProtonVPN.  If not, see <https://www.gnu.org/licenses/>.
                                 <StackPanel Orientation="Horizontal">
                                     <TextBlock Style="{StaticResource SubSettingIcon}" />
                                     <Label Style="{StaticResource SettingName}" Margin="5,0,0,0"
+                                           Content="{translations:Loc Settings_Advanced_lbl_PortForwarding_TorrentApp_IP}"/>
+                                    <icons:InfoCircleFilled Style="{StaticResource InfoCircle}"
+                                                            ToolTip="{translations:Loc Settings_Advanced_lbl_PortForwarding_TorrentApp_IP_Info}"/>
+                                </StackPanel>
+
+                                <TextBox HorizontalAlignment="Right"
+                                          TextWrapping="Wrap"
+                                          TextAlignment="Center"
+                                          Style="{StaticResource SettingsPlaceholderTextBox}"
+                                          Tag="{translations:Loc Settings_Advanced_lbl_PortForwarding_TorrentApp_IP_msg_Watermark}"
+                                          Text="{Binding TorrentAppIP, UpdateSourceTrigger=PropertyChanged}"
+                                          MaxLength="200"
+                                          Width="160"
+                                          AutomationProperties.AutomationId="{StaticResource PortForwardingTorrentAppIPTextbox}"/>
+                            </DockPanel>
+                        </Border>
+
+                        <Border DockPanel.Dock="Top" Style="{StaticResource BorderlessSettingContainer}" Padding="0,0,0,4"
+                                Visibility="{Binding IsToShowPortForwardingTorrentAppWebUI, Converter={StaticResource BoolToVis}}">
+                            <DockPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Style="{StaticResource SubSettingIcon}" />
+                                    <Label Style="{StaticResource SettingName}" Margin="5,0,0,0"
                                            Content="{translations:Loc Settings_Advanced_lbl_PortForwarding_TorrentApp_Port}"/>
                                     <icons:InfoCircleFilled Style="{StaticResource InfoCircle}"
                                                             ToolTip="{translations:Loc Settings_Advanced_lbl_PortForwarding_TorrentApp_Port_Info}"/>

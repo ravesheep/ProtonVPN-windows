@@ -1616,6 +1616,18 @@ namespace ProtonVPN.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("localhost")]
+        public string TorrentAppIP {
+            get {
+                return ((string)(this["TorrentAppIP"]));
+            }
+            set {
+                this["TorrentAppIP"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("8080")]
         public int TorrentAppPort {
             get {

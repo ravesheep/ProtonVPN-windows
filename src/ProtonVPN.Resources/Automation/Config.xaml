@@ -100,6 +100,7 @@ along with ProtonVPN.  If not, see <https://www.gnu.org/licenses/>.
     <system:String x:Key="PortForwardingCustomAppCommandOnTextbox">PortForwardingCustomAppCommandOnTextbox</system:String>
     <system:String x:Key="PortForwardingCustomAppCommandOffTextbox">PortForwardingCustomAppCommandOffTextbox</system:String>
     <system:String x:Key="PortForwardingTorrentAppModeCheckbox">PortForwardingTorrentAppModeCheckbox</system:String>
+    <system:String x:Key="PortForwardingTorrentAppIPTextbox">PortForwardingTorrentAppIPTextbox</system:String>
     <system:String x:Key="PortForwardingTorrentAppPortTextbox">PortForwardingTorrentAppPortTextbox</system:String>
     <system:String x:Key="PortForwardingTorrentAppAuthRequiredCheckbox">PortForwardingTorrentAppAuthRequiredCheckbox</system:String>
     <system:String x:Key="PortForwardingTorrentAppUsernameTextbox">PortForwardingTorrentAppUsernameTextbox</system:String>

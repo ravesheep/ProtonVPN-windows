@@ -187,7 +187,10 @@ namespace ProtonVPN.PortForwarding
         {
             try
             {
-                string url = $"http://localhost:{_appSettings.TorrentAppPort}{apiPath}";
+                string ip = !_appSettings.TorrentAppIP.Equals("") ? _appSettings.TorrentAppIP : "localhost";
+                int port = _appSettings.TorrentAppPort != 0 ? _appSettings.TorrentAppPort : 8080;
+
+                string url = $"http://{ip}:{port}{apiPath}";
 
                 FormUrlEncodedContent urlContent = new(content);
 

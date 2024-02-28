@@ -414,10 +414,26 @@ namespace ProtonVPN.Settings
             set => _appSettings.TorrentAppMode = value;
         }
 
-        public int TorrentAppPort
+        public string TorrentAppIP
         {
-            get => _appSettings.TorrentAppPort;
-            set => _appSettings.TorrentAppPort = value;
+            get => _appSettings.TorrentAppIP;
+            set => _appSettings.TorrentAppIP = value;
+        }
+
+        public string TorrentAppPort
+        {
+            get => _appSettings.TorrentAppPort != 0 ? _appSettings.TorrentAppPort.ToString() : "";
+            set
+            {
+                if (value.Length == 0)
+                {
+                    _appSettings.TorrentAppPort = 0;
+                }
+                else if (int.TryParse(value, out int i))
+                {
+                    _appSettings.TorrentAppPort = i;
+                }
+            }
         }
 
         public bool TorrentAppAuthRequired
@@ -849,8 +865,6 @@ namespace ProtonVPN.Settings
         {
             string final = string.Format("SET protonPort={0}&", string.IsNullOrEmpty(port) ? "\"\"" : port);
             final += command;
-
-            Console.WriteLine("final: " + final);
 
             System.Diagnostics.ProcessStartInfo procStartInfo = new System.Diagnostics.ProcessStartInfo("cmd", "/v /c " + final)
             {
