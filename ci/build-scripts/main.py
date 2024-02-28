@@ -81,7 +81,7 @@ elif args.command == 'app-installer':
     exe_path = os.path.join(build_path, 'ProtonVPN.exe')
     print('Executable File Path:', exe_path)
     v = win32api.GetFileVersionInfo(exe_path, '\\')
-    semVersion = "%d.%d.%d" % (v['FileVersionMS'] / 65536, v['FileVersionMS'] % 65536, v['FileVersionLS'] / 65536)
+    semVersion = "%d.%d.%d.%d" % (v['FileVersionMS'] / 65536, v['FileVersionMS'] % 65536, v['FileVersionLS'] / 65536, v['FileVersionLS'] % 65536)
     print('Building app installer')
     err = installer.build(semVersion, args.hash, 'Setup/setup.iss')
     installer_filename = 'ProtonVPN_v{semVersion}.exe'.format(semVersion=semVersion)
@@ -97,7 +97,7 @@ elif args.command == 'add-commit-hash':
     path = '.\src\GlobalAssemblyInfo.cs'
     with open(path, 'r') as file:
         content = file.read()
-        matches = re.search(r"AssemblyVersion\(\"([0-9]+.[0-9]+.[0-9]+)", content)
+        matches = re.search(r"AssemblyVersion\(\"([0-9]+.[0-9]+.[0-9]+.[0-9]+)", content)
         data = content.replace('$AssemblyVersion', '{version}-{hash}'.format(version=matches[1], hash=args.hash))
     with open(path, 'w') as file:
         file.write(data)

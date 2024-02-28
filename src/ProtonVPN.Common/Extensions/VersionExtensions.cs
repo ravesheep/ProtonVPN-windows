@@ -24,6 +24,6 @@ namespace ProtonVPN.Common.Extensions
     public static class VersionExtensions
     {
         public static Version Normalized(this Version version) 
-            => new Version(version.Major, version.Minor, version.Build >= 0 ? version.Build : 0);
+            => new Version(version.Major, version.Minor, version.Build >= 0 ? version.Build : 0, version.Revision >= 0 ? version.Revision : 0);
     }
 }
