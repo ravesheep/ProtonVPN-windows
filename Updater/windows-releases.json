@@ -8,6 +8,23 @@
             "Name": "Stable",
             "Releases": [
                 {
+                    "Version": "3.2.10.1",
+                    "File": {
+                        "Url": "https://github.com/ravesheep/ProtonVPN-windows/releases/download/3.2.10.1/ProtonVPN_v3.2.10.1.exe",
+                        "SHA1CheckSum": "54708d2c7388ce8c58a9c05ce0728b78bac0f089",
+                        "SHA256CheckSum": "344a2b834aeed8f248387dbf945cdbea750cb87f6abd78fc383c7f6114d88908",   
+                        "SHA512CheckSum": "f5fc670e16cb72b42af99df5eda80cfe1c834add06411b0ee77d3b3d875e2f39ba43c79dc739ae163ade11a9c0cd02c84bb5c5d372920447afa86d773274aaea",
+                        "Arguments": "/silent"
+                    },
+                    "ChangeLog": [
+                        "Allow setting the IP address for qBittorrent's web UI.",
+                        "Extend semver to Revision version numbers to future proof next releases."
+                    ],
+                    "ReleaseDate": "2024-02-28T18:20:00Z",
+                    "MinimumOsVersion": "10.0.17763",
+                    "RolloutPercentage": 100
+                },
+                {
                     "Version": "3.2.10",
                     "File": {
                         "Url": "https://github.com/ravesheep/ProtonVPN-windows/releases/download/3.2.10/ProtonVPN_v3.2.10.exe",
