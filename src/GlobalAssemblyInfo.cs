@@ -14,8 +14,8 @@ using System.Runtime.Versioning;
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
-[assembly: AssemblyVersion("3.2.10.0")]
-[assembly: AssemblyFileVersion("3.2.10.0")]
+[assembly: AssemblyVersion("3.2.10.1")]
+[assembly: AssemblyFileVersion("3.2.10.1")]
 [assembly: ComVisible(false)]
 [assembly: AssemblyInformationalVersion("$AssemblyVersion")]
 [assembly: SupportedOSPlatform("windows")]
