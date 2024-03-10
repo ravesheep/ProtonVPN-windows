@@ -3192,10 +3192,10 @@ Please follow &lt;Hyperlink Command="{Binding OpenArticleCommand}"&gt;&lt;Run Te
     <value>How the port used by qBittorrent should be modified.</value>
   </data>
   <data name="Settings_Advanced_lbl_PortForwarding_TorrentApp_WebUI" xml:space="preserve">
-    <value>via Web UI</value>
+    <value>Web UI</value>
   </data>
   <data name="Settings_Advanced_lbl_PortForwarding_TorrentApp_CommandLine" xml:space="preserve">
-    <value>via Command Line</value>
+    <value>Command Line</value>
   </data>
   <data name="Settings_Advanced_lbl_PortForwarding_TorrentApp_IP" xml:space="preserve">
     <value>Web UI IP</value>
