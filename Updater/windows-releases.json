@@ -8,6 +8,23 @@
             "Name": "Stable",
             "Releases": [
                 {
+                    "Version": "3.2.10.2",
+                    "File": {
+                        "Url": "https://github.com/ravesheep/ProtonVPN-windows/releases/download/3.2.10.2/ProtonVPN_v3.2.10.2.exe",
+                        "SHA1CheckSum": "dbce450bfc291cf57118bf1d70fe3213c9f48c5c",
+                        "SHA256CheckSum": "8a4a4efafa36c469ff5864b0ef6cd5aca8c62e550241732fabe1d88fd78986a4",   
+                        "SHA512CheckSum": "9a33266f234584a2f060efca6eeaf54a28258ce988cbc8ecca8f399c718206dbbc9a14796cbe9af85b0b382958f91bfa2d73c01d9c16eef21e19108ee227c0f5",
+                        "Arguments": "/silent"
+                    },
+                    "ChangeLog": [
+                        "Added basic command-line support (see the project's README).",
+                        "Fixes an issue while trying to run certain custom commands."
+                    ],
+                    "ReleaseDate": "2024-03-10T15:40:00Z",
+                    "MinimumOsVersion": "10.0.17763",
+                    "RolloutPercentage": 100
+                },
+                {
                     "Version": "3.2.10.1",
                     "File": {
                         "Url": "https://github.com/ravesheep/ProtonVPN-windows/releases/download/3.2.10.1/ProtonVPN_v3.2.10.1.exe",
