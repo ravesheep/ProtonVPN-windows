@@ -52,6 +52,7 @@ namespace ProtonVPN.PortForwarding
             _appSettings = appSettings;
             _semaphore = new SemaphoreSlim(1);
         }
+
         public void OnPortForwardingStateChanged(PortForwardingState state)
         {
             if (state?.MappedPort?.MappedPort?.ExternalPort == null)
@@ -62,11 +63,6 @@ namespace ProtonVPN.PortForwarding
             {
                 _currentExternalPort = state.MappedPort.MappedPort.ExternalPort;
                 SendNotification(state.MappedPort.MappedPort.ExternalPort);
-
-                if (_appSettings.PortForwardingApp == PortForwardingApp.Disabled)
-                {
-                    return;
-                }
 
                 if (_appSettings.PortForwardingApp == PortForwardingApp.qBittorrent)
                 {
@@ -104,10 +100,9 @@ namespace ProtonVPN.PortForwarding
 
         private static void RunCustomCommand(string command, int port)
         {
-            string final = string.Format("SET protonPort={0}&", port);
-            final += command;
+            string final = string.Format("\"SET protonPort={0}&{1}\"", port, command);
 
-            System.Diagnostics.ProcessStartInfo procStartInfo = new("cmd", "/v /c " + final)
+            System.Diagnostics.ProcessStartInfo procStartInfo = new("cmd", $"/v /c {final}")
             {
                 UseShellExecute = false,
                 CreateNoWindow = true
