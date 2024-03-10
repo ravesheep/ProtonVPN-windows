@@ -37,6 +37,7 @@ using ProtonVPN.Api.Contracts.Servers;
 using ProtonVPN.Api.Handlers;
 using ProtonVPN.Api.Installers;
 using ProtonVPN.BugReporting;
+using ProtonVPN.CLI;
 using ProtonVPN.Common.Abstract;
 using ProtonVPN.Common.Cli;
 using ProtonVPN.Common.Configuration;
@@ -439,6 +440,15 @@ namespace ProtonVPN.Core
                     instance.OnNetShieldStatisticChanged(stats);
                 }
             });
+
+            Resolve<IAppController>().OnCommandReceived += (_, e) =>
+            {
+                IEnumerable<ICommandAware> instances = Resolve<IEnumerable<ICommandAware>>();
+                foreach (ICommandAware instance in instances)
+                {
+                    instance.OnCommandReceived((CommandEventArgs)e);
+                }
+            };
 
             Resolve<IAppController>().OnOpenWindowInvoked += (_, _) =>
             {

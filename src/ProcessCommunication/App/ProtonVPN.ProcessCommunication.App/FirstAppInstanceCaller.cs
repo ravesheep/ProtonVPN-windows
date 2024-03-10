@@ -26,23 +26,43 @@ namespace ProtonVPN.ProcessCommunication.App
 {
     public static class FirstAppInstanceCaller
     {
-        public static async Task OpenMainWindowAsync(string args)
+        public static async Task HandleCommandAsync(string[] args)
         {
-            AppServerPortRegister appServerPortRegister = new(new NullLogger());
-            int? appServerPort = appServerPortRegister.ReadOnce();
-            if (appServerPort.HasValue && GrpcChannelWrapperFactory.IsPortValid(appServerPort.Value))
+            if (args.Length == 0)
             {
-                await CreateGrpcChannelAndSendOpenWindowCommandAsync(appServerPort.Value, args);
+                await OpenMainWindowAsync(new Uri("https://example.com"));
+            }
+
+            else if (Uri.TryCreate(string.Join(" ", args), UriKind.Absolute, out Uri uri))
+            {
+                await OpenMainWindowAsync(uri);
+            }
+
+            else
+            {
+                await SendCommandAsync(args);
             }
         }
 
-        private static async Task CreateGrpcChannelAndSendOpenWindowCommandAsync(int appServerPort, string args)
+        public static async Task OpenMainWindowAsync(Uri uri)
+        {
+            AppServerPortRegister appServerPortRegister = new(new NullLogger());
+            int? appServerPort = appServerPortRegister.ReadOnce();
+
+            if (appServerPort.HasValue && GrpcChannelWrapperFactory.IsPortValid(appServerPort.Value))
+            {
+                await CreateGrpcChannelAndSendOpenWindowCommandAsync(appServerPort.Value, uri);
+            }
+        }
+
+        private static async Task CreateGrpcChannelAndSendOpenWindowCommandAsync(int appServerPort, Uri uri)
         {
             try
             {
                 GrpcChannelWrapper grpcChannelWrapper = new(appServerPort);
                 IAppController appController = grpcChannelWrapper.CreateService<IAppController>();
-                await SendOpenWindowCommandAsync(appController, args);
+
+                await SendOpenWindowCommandAsync(appController, uri);
                 await grpcChannelWrapper.ShutdownAsync();
             }
             catch
@@ -50,11 +70,48 @@ namespace ProtonVPN.ProcessCommunication.App
             }
         }
 
-        private static async Task SendOpenWindowCommandAsync(IAppController appController, string args)
+        private static async Task SendOpenWindowCommandAsync(IAppController appController, Uri uri)
         {
             try
             {
-                await appController.OpenWindow(args);
+                await appController.OpenWindow(uri);
+            }
+            catch
+            {
+            }
+        }
+
+        public static async Task SendCommandAsync(string[] args)
+        {
+            AppServerPortRegister appServerPortRegister = new(new NullLogger());
+            int? appServerPort = appServerPortRegister.ReadOnce();
+
+            if (appServerPort.HasValue && GrpcChannelWrapperFactory.IsPortValid(appServerPort.Value))
+            {
+                await CreateGrpcChannelAndSendCommandAsync(appServerPort.Value, args);
+            }
+        }
+
+        private static async Task CreateGrpcChannelAndSendCommandAsync(int appServerPort, string[] args)
+        {
+            try
+            {
+                GrpcChannelWrapper grpcChannelWrapper = new(appServerPort);
+                IAppController appController = grpcChannelWrapper.CreateService<IAppController>();
+
+                await SendCommandAsync(appController, args);
+                await grpcChannelWrapper.ShutdownAsync();
+            }
+            catch
+            {
+            }
+        }
+
+        private static async Task SendCommandAsync(IAppController appController, string[] args)
+        {
+            try
+            {
+                await appController.ReceiveCommand(args);
             }
             catch
             {

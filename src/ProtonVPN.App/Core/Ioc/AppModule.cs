@@ -24,6 +24,7 @@ using ProtonVPN.About;
 using ProtonVPN.Account;
 using ProtonVPN.AccountPlan;
 using ProtonVPN.Api;
+using ProtonVPN.CLI;
 using ProtonVPN.Common.Configuration;
 using ProtonVPN.Common.OS.DeviceIds;
 using ProtonVPN.Common.OS.Processes;
@@ -303,6 +304,8 @@ namespace ProtonVPN.Core.Ioc
             builder.RegisterType<NetShieldStatsManager>().AsImplementedInterfaces().SingleInstance();
             builder.RegisterType<UpgradeModalManager>().AsImplementedInterfaces().SingleInstance();
             builder.RegisterType<VpnStatusNotifier>().AsImplementedInterfaces().SingleInstance();
+
+            builder.RegisterType<CommandManager>().AsImplementedInterfaces().SingleInstance();
         }
     }
 }

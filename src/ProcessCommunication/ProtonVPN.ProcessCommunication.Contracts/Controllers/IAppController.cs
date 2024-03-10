@@ -34,6 +34,7 @@ namespace ProtonVPN.ProcessCommunication.Contracts.Controllers
         event EventHandler<NetShieldStatisticIpcEntity> OnNetShieldStatisticChanged;
         event EventHandler<UpdateStateIpcEntity> OnUpdateStateChanged;
         event EventHandler OnOpenWindowInvoked;
+        event EventHandler OnCommandReceived;
 
         Task VpnStateChange(VpnStateIpcEntity vpnState);
         Task PortForwardingStateChange(PortForwardingStateIpcEntity portForwardingState);
@@ -41,6 +42,7 @@ namespace ProtonVPN.ProcessCommunication.Contracts.Controllers
         Task NetShieldStatisticChange(NetShieldStatisticIpcEntity netShieldStatistic);
         Task UpdateStateChange(UpdateStateIpcEntity updateState);
         
-        Task OpenWindow(string args);
+        Task OpenWindow(Uri uri);
+        Task ReceiveCommand(string[] args);
     }
 }

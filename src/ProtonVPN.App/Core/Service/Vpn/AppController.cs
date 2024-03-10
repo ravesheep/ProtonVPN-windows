@@ -25,6 +25,7 @@ using System.Web;
 using System.Windows;
 using ProtonVPN.Account;
 using ProtonVPN.Announcements.Contracts;
+using ProtonVPN.CLI;
 using ProtonVPN.Common.Extensions;
 using ProtonVPN.Logging.Contracts;
 using ProtonVPN.Logging.Contracts.Events.ProcessCommunicationLogs;
@@ -48,6 +49,7 @@ namespace ProtonVPN.Core.Service.Vpn
         public event EventHandler<NetShieldStatisticIpcEntity> OnNetShieldStatisticChanged;
         public event EventHandler<UpdateStateIpcEntity> OnUpdateStateChanged;
         public event EventHandler OnOpenWindowInvoked;
+        public event EventHandler OnCommandReceived;
 
         public AppController(ILogger logger, IUpgradeModalManager upgradeModalManager, IAnnouncementService announcementService)
         {
@@ -107,19 +109,16 @@ namespace ProtonVPN.Core.Service.Vpn
             InvokeOnUiThread(() => OnNetShieldStatisticChanged?.Invoke(this, netShieldStatistic));
         }
 
-        public async Task OpenWindow(string args)
+        public async Task OpenWindow(Uri uri)
         {
             _logger.Debug<ProcessCommunicationLog>("Another process requested to open the main window.");
-            await ProcessCommandArgumentsAsync(args);
+            await ProcessCommandUriArgumentAsync(uri);
             InvokeOnUiThread(() => OnOpenWindowInvoked?.Invoke(this, null));
         }
 
-        private async Task ProcessCommandArgumentsAsync(string args)
+        public async Task ReceiveCommand(string[] args)
         {
-            if (Uri.TryCreate(args, UriKind.Absolute, out Uri uri))
-            {
-                await ProcessCommandUriArgumentAsync(uri);
-            }
+            InvokeOnUiThread(() => OnCommandReceived?.Invoke(this, new CommandEventArgs(args)));
         }
 
         private async Task ProcessCommandUriArgumentAsync(Uri uri)
