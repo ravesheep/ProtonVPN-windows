@@ -8,11 +8,29 @@
             "Name": "Stable",
             "Releases": [
                 {
+                    "Version": "3.2.11",
+                    "File": {
+                        "Url": "https://github.com/ravesheep/ProtonVPN-windows/releases/download/3.2.11/ProtonVPN_v3.2.11.exe",
+                        "SHA1CheckSum": "b03c48717ab4b9438aec5b11df83250168a2852a",
+                        "SHA256CheckSum": "11d0dc1db643f542bf364b8e46ed1ffba5c4139d8b459face578ef561c735fdb",
+                        "SHA512CheckSum": "f24cbab8961b726d0eaf46751b4a4d29ebf0817f1fd4de979b885df37a655321e007add58e6c2e892670f81e025bc3c201fac75156b4af0697ef699f4f051bab",
+                        "Arguments": "/silent"
+                    },
+                    "ChangeLog": [
+                        "We have expanded server support to include additional countries.",
+                        "Enhanced localization support for multiple languages.",
+                        "We fixed an issue in the installation process."
+                    ],
+                    "ReleaseDate": "2024-03-11T17:40:00Z",
+                    "MinimumOsVersion": "10.0.17763",
+                    "RolloutPercentage": 100
+                },
+                {
                     "Version": "3.2.10.2",
                     "File": {
                         "Url": "https://github.com/ravesheep/ProtonVPN-windows/releases/download/3.2.10.2/ProtonVPN_v3.2.10.2.exe",
                         "SHA1CheckSum": "dbce450bfc291cf57118bf1d70fe3213c9f48c5c",
-                        "SHA256CheckSum": "8a4a4efafa36c469ff5864b0ef6cd5aca8c62e550241732fabe1d88fd78986a4",   
+                        "SHA256CheckSum": "8a4a4efafa36c469ff5864b0ef6cd5aca8c62e550241732fabe1d88fd78986a4",
                         "SHA512CheckSum": "9a33266f234584a2f060efca6eeaf54a28258ce988cbc8ecca8f399c718206dbbc9a14796cbe9af85b0b382958f91bfa2d73c01d9c16eef21e19108ee227c0f5",
                         "Arguments": "/silent"
                     },
@@ -29,7 +47,7 @@
                     "File": {
                         "Url": "https://github.com/ravesheep/ProtonVPN-windows/releases/download/3.2.10.1/ProtonVPN_v3.2.10.1.exe",
                         "SHA1CheckSum": "54708d2c7388ce8c58a9c05ce0728b78bac0f089",
-                        "SHA256CheckSum": "344a2b834aeed8f248387dbf945cdbea750cb87f6abd78fc383c7f6114d88908",   
+                        "SHA256CheckSum": "344a2b834aeed8f248387dbf945cdbea750cb87f6abd78fc383c7f6114d88908",
                         "SHA512CheckSum": "f5fc670e16cb72b42af99df5eda80cfe1c834add06411b0ee77d3b3d875e2f39ba43c79dc739ae163ade11a9c0cd02c84bb5c5d372920447afa86d773274aaea",
                         "Arguments": "/silent"
                     },
@@ -46,7 +64,7 @@
                     "File": {
                         "Url": "https://github.com/ravesheep/ProtonVPN-windows/releases/download/3.2.10/ProtonVPN_v3.2.10.exe",
                         "SHA1CheckSum": "0174892764789b3db84f34e423c733396b87fa1d",
-                        "SHA256CheckSum": "65736bedc51a3a096ac97840fcdd1685f965cb56606e072df09bc63ef344161c",   
+                        "SHA256CheckSum": "65736bedc51a3a096ac97840fcdd1685f965cb56606e072df09bc63ef344161c",
                         "SHA512CheckSum": "a20dee5564f98f3b8e83afbd8d47f47c524321de52eb3af2940e1f0c5ebde3a34a4c7fa18a44b9f8e1e13d4e097be7b4c3393ec4d7fc0a3480e016e63ce5bd1d",
                         "Arguments": "/silent"
                     },
