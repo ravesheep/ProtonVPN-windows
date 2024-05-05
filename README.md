@@ -88,8 +88,8 @@ ProtonVPN.Launcher --Connect server {name}
 
 # Connects to a server in the given country (and city, if specified) with given features,
 # or the previous server's features
-ProtonVPN.Launcher --Connect {countryCode} [SecureCore|Tor|P2P|B2B]
-ProtonVPN.Launcher --Connect {countryCode} {city} [SecureCore|Tor|P2P|B2B]
+ProtonVPN.Launcher --Connect server {countryCode} [SecureCore|Tor|P2P|B2B]
+ProtonVPN.Launcher --Connect server {countryCode} {city} [SecureCore|Tor|P2P|B2B]
 
 # Disconnects from the current server
 ProtonVPN.Launcher --Disconnect
