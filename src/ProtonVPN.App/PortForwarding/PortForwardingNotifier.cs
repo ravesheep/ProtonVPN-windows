@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2023 Proton AG
  *
  * This file is part of ProtonVPN.
@@ -15,8 +15,11 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with ProtonVPN.  If not, see <https://www.gnu.org/licenses/>.
+
+ This is the SSL version of the WebUi callback.
  */
 
+using Microsoft.VisualBasic;
 using ProtonVPN.Common.PortForwarding;
 using ProtonVPN.Core.PortForwarding;
 using ProtonVPN.Core.Settings;
@@ -24,16 +27,19 @@ using ProtonVPN.Notifications;
 using ProtonVPN.Translations;
 using System;
 using System.Collections.Generic;
+using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Windows;
 
 namespace ProtonVPN.PortForwarding
 {
     public class PortForwardingNotifier : IPortForwardingNotifier, IPortForwardingStateAware
     {
-        private static readonly HttpClient _httpClient = new();
+        private HttpClient _httpClient;
         private readonly INotificationSender _notificationSender;
         private readonly IAppSettings _appSettings;
         private readonly SemaphoreSlim _semaphore;
@@ -43,6 +49,7 @@ namespace ProtonVPN.PortForwarding
 
         public PortForwardingNotifier(INotificationSender notificationSender, IAppSettings appSettings)
         {
+
             _httpClient.DefaultRequestHeaders.CacheControl = new CacheControlHeaderValue
             {
                 NoCache = true
@@ -55,6 +62,13 @@ namespace ProtonVPN.PortForwarding
 
         public void OnPortForwardingStateChanged(PortForwardingState state)
         {
+
+            var _handler = new HttpClientHandler()
+            {
+                ServerCertificateCustomValidationCallback = delegate { return true; },
+            };
+            _httpClient = new HttpClient(_handler);
+
             if (state?.MappedPort?.MappedPort?.ExternalPort == null)
             {
                 _currentExternalPort = 0;
@@ -185,7 +199,7 @@ namespace ProtonVPN.PortForwarding
                 string ip = !_appSettings.TorrentAppIP.Equals("") ? _appSettings.TorrentAppIP : "localhost";
                 int port = _appSettings.TorrentAppPort != 0 ? _appSettings.TorrentAppPort : 8080;
 
-                string url = $"http://{ip}:{port}{apiPath}";
+                string url = $"https://{ip}:{port}{apiPath}";
 
                 FormUrlEncodedContent urlContent = new(content);
 
