@@ -19,7 +19,6 @@
  This is the SSL version of the WebUi callback.
  */
 
-using Microsoft.VisualBasic;
 using ProtonVPN.Common.PortForwarding;
 using ProtonVPN.Core.PortForwarding;
 using ProtonVPN.Core.Settings;
@@ -27,13 +26,10 @@ using ProtonVPN.Notifications;
 using ProtonVPN.Translations;
 using System;
 using System.Collections.Generic;
-using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Windows;
 
 namespace ProtonVPN.PortForwarding
 {
@@ -62,7 +58,6 @@ namespace ProtonVPN.PortForwarding
 
         public void OnPortForwardingStateChanged(PortForwardingState state)
         {
-
             var _handler = new HttpClientHandler()
             {
                 ServerCertificateCustomValidationCallback = delegate { return true; },
