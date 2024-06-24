@@ -15,8 +15,6 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with ProtonVPN.  If not, see <https://www.gnu.org/licenses/>.
-
- This is the SSL version of the WebUi callback.
  */
 
 using ProtonVPN.Common.PortForwarding;
@@ -35,7 +33,8 @@ namespace ProtonVPN.PortForwarding
 {
     public class PortForwardingNotifier : IPortForwardingNotifier, IPortForwardingStateAware
     {
-        private HttpClient _httpClient;
+        private static HttpClientHandler _httpClientHandler = new(){ServerCertificateCustomValidationCallback = delegate { return true; },};
+        private static readonly HttpClient _httpClient = new(_httpClientHandler);
         private readonly INotificationSender _notificationSender;
         private readonly IAppSettings _appSettings;
         private readonly SemaphoreSlim _semaphore;
@@ -45,7 +44,6 @@ namespace ProtonVPN.PortForwarding
 
         public PortForwardingNotifier(INotificationSender notificationSender, IAppSettings appSettings)
         {
-
             _httpClient.DefaultRequestHeaders.CacheControl = new CacheControlHeaderValue
             {
                 NoCache = true
@@ -58,12 +56,6 @@ namespace ProtonVPN.PortForwarding
 
         public void OnPortForwardingStateChanged(PortForwardingState state)
         {
-            var _handler = new HttpClientHandler()
-            {
-                ServerCertificateCustomValidationCallback = delegate { return true; },
-            };
-            _httpClient = new HttpClient(_handler);
-
             if (state?.MappedPort?.MappedPort?.ExternalPort == null)
             {
                 _currentExternalPort = 0;
