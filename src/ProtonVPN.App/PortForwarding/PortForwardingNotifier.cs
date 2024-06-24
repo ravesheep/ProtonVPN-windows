@@ -186,8 +186,8 @@ namespace ProtonVPN.PortForwarding
                 string ip = !_appSettings.TorrentAppIP.Equals("") ? _appSettings.TorrentAppIP : "localhost";
                 int port = _appSettings.TorrentAppPort != 0 ? _appSettings.TorrentAppPort : 8080;
 
-                string url = $"https://{ip}:{port}{apiPath}";
-
+                string url = $"http://{ip}:{port}{apiPath}";
+                
                 FormUrlEncodedContent urlContent = new(content);
 
                 using HttpResponseMessage response = await _httpClient.PostAsync(url, urlContent);
@@ -213,6 +213,34 @@ namespace ProtonVPN.PortForwarding
             }
             catch (Exception)
             {
+                //Try https connection
+                string ip = !_appSettings.TorrentAppIP.Equals("") ? _appSettings.TorrentAppIP : "localhost";
+                int port = _appSettings.TorrentAppPort != 0 ? _appSettings.TorrentAppPort : 8080;
+
+                string urlhttps = $"https://{ip}:{port}{apiPath}";
+
+                FormUrlEncodedContent urlContenthttps = new(content);
+
+                using HttpResponseMessage responsehttps = await _httpClient.PostAsync(urlhttps, urlContenthttps);
+
+                if (responsehttps.IsSuccessStatusCode)
+                {
+                    return true;
+                }
+                // Likely requires authentication, cookie unset or invalid
+                else if (((int)responsehttps.StatusCode == 401 || (int)responsehttps.StatusCode == 403) && _appSettings.TorrentAppAuthRequired && doGetCookie)
+                {
+                    _isCookieSet = await GetCookieAsync();
+
+                    // Retry, with a cookie that should be valid
+                    if (_isCookieSet)
+                    {
+                        if (await PostWebUIRequestAsync(apiPath, content, false))
+                        {
+                            return true;
+                        }
+                    }
+                }
                 return false;
             }
 
