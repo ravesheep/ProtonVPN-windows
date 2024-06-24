@@ -33,6 +33,7 @@ namespace ProtonVPN.PortForwarding
 {
     public class PortForwardingNotifier : IPortForwardingNotifier, IPortForwardingStateAware
     {
+        // Allow self-signed certificates
         private static HttpClientHandler _httpClientHandler = new(){ServerCertificateCustomValidationCallback = delegate { return true; },};
         private static readonly HttpClient _httpClient = new(_httpClientHandler);
         private readonly INotificationSender _notificationSender;
@@ -183,6 +184,7 @@ namespace ProtonVPN.PortForwarding
         {
             try
             {
+                // Try http connection
                 string ip = !_appSettings.TorrentAppIP.Equals("") ? _appSettings.TorrentAppIP : "localhost";
                 int port = _appSettings.TorrentAppPort != 0 ? _appSettings.TorrentAppPort : 8080;
 
@@ -213,7 +215,7 @@ namespace ProtonVPN.PortForwarding
             }
             catch (Exception)
             {
-                //Try https connection
+                // Try https connection
                 string ip = !_appSettings.TorrentAppIP.Equals("") ? _appSettings.TorrentAppIP : "localhost";
                 int port = _appSettings.TorrentAppPort != 0 ? _appSettings.TorrentAppPort : 8080;
 
