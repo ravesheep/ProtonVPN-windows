@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2023 Proton AG
  *
  * This file is part of ProtonVPN.
@@ -33,7 +33,9 @@ namespace ProtonVPN.PortForwarding
 {
     public class PortForwardingNotifier : IPortForwardingNotifier, IPortForwardingStateAware
     {
-        private static readonly HttpClient _httpClient = new();
+        // Allow self-signed certificates
+        private static HttpClientHandler _httpClientHandler = new(){ServerCertificateCustomValidationCallback = delegate { return true; },};
+        private static readonly HttpClient _httpClient = new(_httpClientHandler);
         private readonly INotificationSender _notificationSender;
         private readonly IAppSettings _appSettings;
         private readonly SemaphoreSlim _semaphore;
@@ -182,11 +184,12 @@ namespace ProtonVPN.PortForwarding
         {
             try
             {
+                // Try http connection
                 string ip = !_appSettings.TorrentAppIP.Equals("") ? _appSettings.TorrentAppIP : "localhost";
                 int port = _appSettings.TorrentAppPort != 0 ? _appSettings.TorrentAppPort : 8080;
 
                 string url = $"http://{ip}:{port}{apiPath}";
-
+                
                 FormUrlEncodedContent urlContent = new(content);
 
                 using HttpResponseMessage response = await _httpClient.PostAsync(url, urlContent);
@@ -212,6 +215,34 @@ namespace ProtonVPN.PortForwarding
             }
             catch (Exception)
             {
+                // Try https connection
+                string ip = !_appSettings.TorrentAppIP.Equals("") ? _appSettings.TorrentAppIP : "localhost";
+                int port = _appSettings.TorrentAppPort != 0 ? _appSettings.TorrentAppPort : 8080;
+
+                string urlhttps = $"https://{ip}:{port}{apiPath}";
+
+                FormUrlEncodedContent urlContenthttps = new(content);
+
+                using HttpResponseMessage responsehttps = await _httpClient.PostAsync(urlhttps, urlContenthttps);
+
+                if (responsehttps.IsSuccessStatusCode)
+                {
+                    return true;
+                }
+                // Likely requires authentication, cookie unset or invalid
+                else if (((int)responsehttps.StatusCode == 401 || (int)responsehttps.StatusCode == 403) && _appSettings.TorrentAppAuthRequired && doGetCookie)
+                {
+                    _isCookieSet = await GetCookieAsync();
+
+                    // Retry, with a cookie that should be valid
+                    if (_isCookieSet)
+                    {
+                        if (await PostWebUIRequestAsync(apiPath, content, false))
+                        {
+                            return true;
+                        }
+                    }
+                }
                 return false;
             }
 
